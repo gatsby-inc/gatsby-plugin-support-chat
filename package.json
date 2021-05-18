@@ -6,5 +6,9 @@
   ],
   "scripts": {
     "start": "yarn workspace demo start"
+  },
+  "dependencies": {
+    "@slack/events-api": "^3.0.0",
+    "@slack/web-api": "^6.2.3"
   }
 }
