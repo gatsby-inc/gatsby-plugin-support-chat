@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "team-express",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "yarn workspace demo start"
+  }
+}
