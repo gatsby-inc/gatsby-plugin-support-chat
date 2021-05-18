@@ -1,0 +1,50 @@
+.root {
+  --shadow-gray: rgba(0, 0, 0, .125);
+  background-color: white;
+  box-shadow: 0 1px 4px 1px var(--shadow-gray);
+  position: fixed;
+  right: 0;
+  bottom: 64px;
+  margin: 16px;
+  width: 256px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+}
+
+.close {
+  margin-left: auto;
+}
+
+.conversation {
+  flex: 1 1 auto;
+  overflow-y: scroll;
+}
+
+.form {
+}
+
+.label {
+}
+
+.input {
+}
+
+.button {
+}
