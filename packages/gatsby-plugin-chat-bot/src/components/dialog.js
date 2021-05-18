@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import * as styles from './dialog.module.css'
 import colors from './colors'
+import SendIcon from './send-icon'
 
 export default function Dialog ({
   closeChat,
@@ -27,6 +28,7 @@ export default function Dialog ({
 
   const handleSubmit = e => {
     e.preventDefault();
+    if (text === '') return
     // placeholder
     setMessages([ ...messages, {
       time: Date.now(),
@@ -76,11 +78,6 @@ export default function Dialog ({
           <h2 className={styles.title}>
             👋 Hello! How can we help?
           </h2>
-          <button
-            className={styles.close}
-            onClick={closeChat}>
-            &times;
-          </button>
         </header>
         <ul
           ref={conversation}
@@ -119,8 +116,12 @@ export default function Dialog ({
             placeholder='Type a message...'
           />
           <button
-            className={styles.button}>
-            Send
+            title='Send'
+            className={styles.button}
+            style={{
+              color: colors.darkGray,
+            }}>
+            <SendIcon />
           </button>
         </form>
       </div>

@@ -5,7 +5,7 @@
   --radius-large: 16px;
 
   background-color: white;
-  box-shadow: 0 1px 4px 1px var(--shadow-gray);
+  box-shadow: 0 4px 16px 1px var(--shadow-gray);
   border-radius: var(--radius-large);
   overflow: hidden;
   position: fixed;
@@ -56,26 +56,13 @@
   display: flex;
   align-items: center;
   padding-left: 16px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .title {
   font-size: 20px;
   margin: 0;
-}
-
-.close {
-  appearance: none;
-  font-family: inherit;
-  font-size: 24px;
-  line-height: 1;
-  color: inherit;
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  margin-left: auto;
-  padding: 8px;
 }
 
 .conversation {
@@ -131,8 +118,10 @@
   appearance: none;
   border: 0;
   margin: 0;
-  font-size: inherit;
+  padding: 10px;
+  font-size: 24px;
+  line-height: 1;
   border-radius: var(--radius-medium);
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
 }
