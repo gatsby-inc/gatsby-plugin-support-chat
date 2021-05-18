@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
 import loadable from '@loadable/component'
+import Button from './button'
 import * as styles from './widget.module.css'
 import colors from './colors'
 
@@ -24,15 +25,10 @@ export default function Widget () {
           closeChat={closeChat}
         />
       )}
-      <button
-        className={styles.button}
-        style={{
-          color: 'white',
-          backgroundColor: colors.blue,
-        }}
-        onClick={toggleChat}>
-        Chat
-      </button>
+      <Button
+        open={open}
+        onClick={toggleChat}
+      />
     </div>
   )
 }
