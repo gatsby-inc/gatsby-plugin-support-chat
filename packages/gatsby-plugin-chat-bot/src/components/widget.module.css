@@ -6,4 +6,11 @@
 }
 
 .button {
+  appearance: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 9999px;
+  width: 64px;
+  height: 64px;
 }
