@@ -1,6 +1,5 @@
 .root {
   --shadow-gray: rgba(0, 0, 0, .125);
-  --radius-small: 4px;
   --radius-medium: 8px;
   --radius-large: 16px;
 
@@ -119,4 +118,3 @@
     display: none;
   }
 }
-
