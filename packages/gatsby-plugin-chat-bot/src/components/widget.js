@@ -3,11 +3,12 @@ import { useState } from 'react'
 import loadable from '@loadable/component'
 import Button from './button'
 import * as styles from './widget.module.css'
-import colors from './colors'
 
 const Dialog = loadable(() => import('./dialog'))
 
-export default function Widget () {
+export default function Widget ({
+  options,
+}) {
   const [open, setOpen] = useState(false)
 
   const toggleChat = e => {
@@ -23,6 +24,7 @@ export default function Widget () {
       {open && (
         <Dialog
           closeChat={closeChat}
+          options={options}
         />
       )}
       <Button

@@ -5,6 +5,7 @@ import colors from './colors'
 import SendIcon from './send-icon'
 
 export default function Dialog ({
+  options,
   closeChat,
   ...rest
 }) {
@@ -70,6 +71,8 @@ export default function Dialog ({
     input.current.focus()
   }, [])
 
+  const title = options.title || '👋 Hello! How can we help?'
+
   return (
     <>
       <div
@@ -84,7 +87,7 @@ export default function Dialog ({
           }}
           className={styles.header}>
           <h2 className={styles.title}>
-            👋 Hello! How can we help?
+            {title}
           </h2>
           <button
             className={styles.close}
