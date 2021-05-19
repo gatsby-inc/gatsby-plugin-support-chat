@@ -13,6 +13,7 @@
   "dependencies": {
     "gatsby": "^3.5.0",
     "gatsby-plugin-chat-bot": "*",
+    "gatsby-plugin-gatsby-cloud": "^2.5.0",
     "gatsby-plugin-image": "^1.5.0",
     "gatsby-plugin-sharp": "^3.5.0",
     "gatsby-plugin-theme-ui": "^0.8.4",
