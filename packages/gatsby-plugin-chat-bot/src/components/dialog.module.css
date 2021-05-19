@@ -5,16 +5,13 @@
   --radius-large: 16px;
 
   background-color: white;
-  box-shadow: 0 4px 16px 1px var(--shadow-gray);
-  border-radius: var(--radius-large);
   overflow: hidden;
   position: fixed;
+  z-index: 1;
+  top: 0;
   right: 0;
-  bottom: 96px;
-  margin: 16px;
-  width: 384px;
-  max-width: 90%;
-  height: 480px;
+  bottom: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
   font-family: system-ui, sans-serif;
@@ -24,6 +21,20 @@
   animation-name: open;
   animation-duration: .5s;
   animation-timing-function: ease-out;
+}
+
+.close {
+  appearance: none;
+  display: block;
+  border: 0;
+  color: inherit;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 24px;
+  margin: 0;
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
 }
 
 @keyframes open {
@@ -73,6 +84,7 @@
   list-style: none;
   margin: 0;
   padding: 16px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .message {
@@ -125,3 +137,21 @@
   width: 64px;
   height: 64px;
 }
+
+@media screen and (min-width: 32em) {
+  .root {
+    top: auto;
+    left: auto;
+    right: 0;
+    bottom: 96px;
+    margin: 16px;
+    width: 384px;
+    height: 480px;
+    box-shadow: 0 4px 16px 1px var(--shadow-gray);
+    border-radius: var(--radius-large);
+  }
+  .close {
+    display: none;
+  }
+}
+

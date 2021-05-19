@@ -27,7 +27,7 @@ export default function Dialog ({
   }
 
   const handleSubmit = e => {
-    e.preventDefault();
+    e.preventDefault()
     if (text === '') return
     // placeholder
     setMessages([ ...messages, {
@@ -57,6 +57,14 @@ export default function Dialog ({
     }
   }
 
+  const handleKeyDown = e => {
+    switch (e.key) {
+      case 'Escape':
+        closeChat()
+        break
+    }
+  }
+
   useEffect(() => {
     if (!input.current) return
     input.current.focus()
@@ -78,6 +86,12 @@ export default function Dialog ({
           <h2 className={styles.title}>
             👋 Hello! How can we help?
           </h2>
+          <button
+            className={styles.close}
+            title='Close chat'
+            onClick={closeChat}>
+            ×
+          </button>
         </header>
         <ul
           ref={conversation}
@@ -113,6 +127,7 @@ export default function Dialog ({
             value={text}
             onChange={handleTextChange}
             onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyDown}
             placeholder='Type a message...'
           />
           <button
