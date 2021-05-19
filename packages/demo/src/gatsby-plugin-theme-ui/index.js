@@ -5,13 +5,14 @@ const heading = {
   fontWeight: "heading",
 };
 
+
 export default {
   config: {
     useBorderBox: true,
   },
   breakpoints: ["768px", "1024px", "1440px"],
   colors: {
-    text: "#48434F",
+    text: "#232129",
     muted: "#F6EDFA",
     background: "#FFFFFF",
     dark: "#362066",
@@ -27,6 +28,13 @@ export default {
     body: 400,
     heading: 800,
     bold: 700,
+  },
+  layout: {
+    main: {
+      maxWidth: 1174,
+      mx: "auto",
+      mt: 96,
+    },
   },
   lineHeights: {
     body: 1.5,
@@ -63,19 +71,16 @@ export default {
   buttons: {
     primary: {
       color: "background",
-      bg: "primary",
+      bg: "#452475",
       "&:hover": {
         bg: "dark",
       },
+      cursor: "pointer",
     },
     secondary: {
+      color: "text",
       bg: "background",
-      color: "secondary",
-      borderColor: "secondary",
-      border: "1px solid",
-      "&:hover": {
-        bg: "muted",
-      },
+      cursor: "pointer",
     },
   },
   styles: {
