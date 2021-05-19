@@ -1,7 +1,7 @@
 import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
 import { WebClient } from "@slack/web-api"
 
-let channelID: string = process.env.ChannelID
+let channelID: string = process.env.CHANNEL_ID
 let token:string = process.env.SLACK_TOKEN
 
 const web = new WebClient(token);
@@ -31,5 +31,4 @@ export default async function handler(
         res.status(500).send(error)
     }
 }
-
 
