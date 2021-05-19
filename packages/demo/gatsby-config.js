@@ -2,6 +2,5 @@ module.exports = {
   flags: {
     FUNCTIONS: true,
   },
-  plugins: [
-  ],
-}
+  plugins: [`gatsby-plugin-theme-ui`, `gatsby-plugin-image`],
+};
