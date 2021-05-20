@@ -3,29 +3,15 @@ import { useState, useEffect, useRef } from "react"
 import * as styles from "./dialog.module.css"
 import colors from "./colors"
 import Form from "./form"
+import { useSupportChat } from "./hooks"
 
 export default function Dialog({ options, closeChat, ...rest }) {
   const conversation = useRef(null)
-
-  // placeholder
-  const [messages, setMessages] = useState([
-    {
-      user: "bot",
-      text: "Hello! How can we help you?",
-      time: Date.now(),
-    },
-  ])
+  const [messages, sendMessage] = useSupportChat()
 
   const handleSubmit = text => {
     // placeholder
-    setMessages([
-      ...messages,
-      {
-        time: Date.now(),
-        text,
-        sender: "user",
-      },
-    ])
+    sendMessage(text)
 
     // scroll to bottom
     if (!conversation.current) return
