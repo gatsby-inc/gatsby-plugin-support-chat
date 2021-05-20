@@ -3,8 +3,7 @@ const heading = {
   fontFamily: "heading",
   lineHeight: "heading",
   fontWeight: "heading",
-};
-
+}
 
 export default {
   config: {
@@ -40,7 +39,7 @@ export default {
       mx: "auto",
       mt: 96,
       background: `#3300C4`,
-    }
+    },
   },
   lineHeights: {
     body: 1.5,
@@ -126,4 +125,4 @@ export default {
       fontSize: 0,
     },
   },
-};
+}

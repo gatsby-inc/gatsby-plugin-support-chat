@@ -1,5 +1,5 @@
 .root {
-  --shadow-gray: rgba(0, 0, 0, .125);
+  --shadow-gray: rgba(0, 0, 0, 0.125);
   --radius-medium: 8px;
   --radius-large: 16px;
 
@@ -18,7 +18,7 @@
   line-height: 1.25;
 
   animation-name: open;
-  animation-duration: .5s;
+  animation-duration: 0.5s;
   animation-timing-function: ease-out;
 }
 
