@@ -5,7 +5,7 @@ const endpoints = {
   poll: "/api/poll-updates",
 }
 
-const DELAY = 1000
+const DELAY = 8000
 const STORAGE_KEY = "GATSBY-PLUGIN-SUPPORT-CHAT-ID"
 
 export const useSupportChat = () => {
@@ -16,43 +16,44 @@ export const useSupportChat = () => {
 
   // polling for messages
   useEffect(() => {
-    let timer = setInterval(() => {
-      fetch(endpoints.poll, {
-        method: "post",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          thread_ts,
-          thread: thread_ts,
-        }),
-      })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data)
-          if (!data.text) return
-
-          setMessages([
-            ...messages,
-            {
-              user: "bot",
-              text: data.text,
-              time: Date.now(),
-            },
-          ])
+    let timer
+    if (thread_ts) {
+      timer = setInterval(() => {
+        fetch(endpoints.poll, {
+          method: "post",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            thread_ts,
+            thread: thread_ts,
+          }),
         })
-    }, DELAY)
+          .then(res => res.json())
+          .then(data => {
+            if (data.length === 0) return
+            const newMessages = data.map(d => ({
+              text: d.message,
+              time: Date.now(),
+              sender: "bot",
+            }))
+
+            setMessages([...messages, ...newMessages])
+          })
+      }, DELAY)
+    }
+
     return () => {
       clearInterval(timer)
     }
-  }, [])
+  }, [thread_ts, messages])
 
   const sendMessage = text => {
     setMessages([
       ...messages,
       {
-        user: "user",
+        sender: "user",
         text,
         time: Date.now(),
       },
@@ -71,7 +72,6 @@ export const useSupportChat = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         if (!thread_ts) {
           setThreadID(data.message?.ts)
           localStorage.setItem(STORAGE_KEY, data.message?.ts)
