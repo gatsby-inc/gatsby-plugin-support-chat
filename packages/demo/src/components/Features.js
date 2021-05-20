@@ -59,7 +59,7 @@ const Features = () => (
       </Flex>
       <Box sx={mainContentStyles}>
         <Heading as="h1" sx={mainHeadingStyles}>
-          Drop-in Componenent
+          Drop-in Component
         </Heading>
         <Text sx={mainDescriptionStyles}>
           Fix me please. Fix me please. Fix me please. Fix me please. Fix me
