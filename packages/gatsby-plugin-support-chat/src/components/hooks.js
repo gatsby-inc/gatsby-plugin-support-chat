@@ -23,7 +23,10 @@ export const useSupportChat = () => {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ thread_ts }),
+        body: JSON.stringify({
+          thread_ts,
+          thread: thread_ts,
+        }),
       })
         .then(res => res.json())
         .then(data => {
