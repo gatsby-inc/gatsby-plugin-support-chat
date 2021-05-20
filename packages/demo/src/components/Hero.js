@@ -1,6 +1,6 @@
 /* @jsx jsx */
 import * as React from "react"
-import { Heading, Text, Button, jsx, Flex, Box } from "theme-ui"
+import { Heading, Text, Button, jsx, Flex, Box, Link } from "theme-ui"
 import { GoMarkGithub } from "react-icons/go"
 import HeroImage from "../assets/Header-Image.svg"
 
@@ -44,19 +44,34 @@ const Hero = () => (
         don't know for sure is whether or not few can name a leery voice.
       </Text>
       <Flex sx={{ alignItems: `center` }}>
-        <Button sx={{ ...heroButtonStyles, marginRight: 4 }}>
-          Try it out now!
-        </Button>
         <Button
-          variant="secondary"
-          sx={{
-            ...heroButtonStyles,
-            display: `flex`,
-            textDecoration: ["underline", "none"],
+          sx={{ ...heroButtonStyles, marginRight: 4 }}
+          onClick={e => {
+            e.preventDefault()
+            if (window !== undefined) {
+              window.document
+                .querySelector('button[title="Open chat"]')
+                ?.click()
+            }
           }}
         >
-          <GoMarkGithub sx={iconStyles} /> Visit the Repo
+          Try it out now!
         </Button>
+        {/* 
+          TODO:Update link when we have a public repo 
+        */}
+        <Link href="https://github.com/gatsby-inc/team-express/tree/main/packages/gatsby-plugin-chat-bot">
+          <Button
+            variant="secondary"
+            sx={{
+              ...heroButtonStyles,
+              display: `flex`,
+              textDecoration: ["underline", "none"],
+            }}
+          >
+            <GoMarkGithub sx={iconStyles} /> Visit the Repo
+          </Button>
+        </Link>
       </Flex>
     </Box>
     <Flex sx={{ margin: `auto` }}>
@@ -67,6 +82,6 @@ const Hero = () => (
       />
     </Flex>
   </Box>
-);
+)
 
 export default Hero
