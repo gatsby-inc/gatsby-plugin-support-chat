@@ -9,7 +9,7 @@ const mainSectionStyles = {
   gap: `3rem`,
   padding: `40px 48px`,
   gridTemplateColumns: [`1fr`, `5fr 4fr`],
-  background: `#3300C4`,
+  background: `#FFB238;`,
   maxWidth: `1174px`,
   mx: `auto`,
 }
@@ -18,25 +18,26 @@ const mainContentStyles = {
   display: `flex`,
   flexDirection: `column`,
   fontSize: 4,
-  padding: `70px 0`,
+  padding: `50px 0`,
 }
 
 const mainImageStyles = {
   width: `100%`,
   borderRadius: `1em`,
   padding: `0 30px`,
-  marginTop: "-2em",
+  marginTop: "-3em",
+  marginBottom: "-3em",
 }
 const mainHeadingStyles = {
-  fontSize: 4,
+  fontSize: 5,
   marginBottom: `1rem`,
-  color: `#FFD359`,
+  color: `#3300C4`,
 }
 
 const mainDescriptionStyles = {
   fontSize: 3,
-  marginBottom: `2rem`,
-  color: `#FFFFFF`,
+  marginBottom: `rem`,
+  color: `#000000`,
 }
 
 const Features = () => (
