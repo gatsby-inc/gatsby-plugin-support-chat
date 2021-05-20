@@ -36,7 +36,8 @@ export default {
     },
     full: {
       mt: 96,
-      background: `#3300C4`,
+      background: `#FFB238`,
+      paddingBottom: `3rem`,
     },
   },
   lineHeights: {
@@ -45,6 +46,7 @@ export default {
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   radii: [0, 2, 4, 8, 12, 24, 32, 48, 64, 72, 9999],
+  sizes: [1174],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   text: {
     default: {
