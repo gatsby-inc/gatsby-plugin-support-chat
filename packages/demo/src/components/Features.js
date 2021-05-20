@@ -12,34 +12,34 @@ const mainSectionStyles = {
   background: `#3300C4`,
   maxWidth: `1174px`,
   mx: `auto`,
-};
+}
 
 const mainContentStyles = {
   display: `flex`,
   flexDirection: `column`,
   fontSize: 4,
   padding: `70px 0`,
-};
+}
 
 const mainImageStyles = {
   width: `100%`,
   borderRadius: `1em`,
   padding: `0 30px`,
   marginTop: "-2em",
-};
+}
 const mainHeadingStyles = {
   fontSize: 4,
   marginBottom: `1rem`,
   color: `#FFD359`,
-};
+}
 
 const mainDescriptionStyles = {
   fontSize: 3,
   marginBottom: `2rem`,
   color: `#FFFFFF`,
-};
+}
 
-const MainSection = () => (
+const Features = () => (
   <Box as="section" variant="layout.full">
     <article sx={mainSectionStyles}>
       <Flex sx={{ margin: `auto` }}>
@@ -98,6 +98,6 @@ const MainSection = () => (
       </Box>
     </article>
   </Box>
-);
+)
 
-export default MainSection
+export default Features
