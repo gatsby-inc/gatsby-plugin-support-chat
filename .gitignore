@@ -1,5 +1,7 @@
 node_modules
 .cache
 public
+packages/demo/.env.development
+packages/demo/cache/
 yarn-error.log
 .DS_Store

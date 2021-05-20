@@ -11,6 +11,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "flat-cache": "^3.0.4",
     "gatsby": "^3.5.0",
     "gatsby-plugin-chat-bot": "*",
     "gatsby-plugin-gatsby-cloud": "^2.5.0",
