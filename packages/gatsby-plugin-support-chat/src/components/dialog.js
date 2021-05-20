@@ -44,7 +44,7 @@ export default function Dialog ({
         className={styles.overlay}
         onClick={closeChat}
       />
-      <div className={['gatsby-plugin-chat-bot', styles.root].join(' ')}>
+      <div className={['gatsby-plugin-support-chat', styles.root].join(' ')}>
         <header
           style={{
             color: 'white',
