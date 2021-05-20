@@ -35,6 +35,12 @@ export default {
       mx: "auto",
       mt: 96,
     },
+    overflowMain: {
+      maxWidth: 1174,
+      mx: "auto",
+      mt: 96,
+      background: `#3300C4`,
+    }
   },
   lineHeights: {
     body: 1.5,
