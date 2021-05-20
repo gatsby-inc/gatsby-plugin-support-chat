@@ -29,14 +29,12 @@ export default {
     bold: 700,
   },
   layout: {
-    main: {
+    contained: {
       maxWidth: 1174,
       mx: "auto",
       mt: 96,
     },
-    overflowMain: {
-      maxWidth: 1174,
-      mx: "auto",
+    full: {
       mt: 96,
       background: `#3300C4`,
     },

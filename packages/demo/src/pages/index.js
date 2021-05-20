@@ -2,6 +2,7 @@
 import * as React from "react"
 import { jsx, Box } from "theme-ui"
 
+<<<<<<< HEAD
 import Hero from "../components/Hero"
 import Footer from "../components/Footer"
 import MainSection from "../components/MainSection"
@@ -20,4 +21,14 @@ export default function Home() {
       </Box>
     </div>
   )
+=======
+export default function Home() {
+  return (
+    <Box as="main">
+      <Hero />
+      <MainSection />
+      <Footer />
+    </Box>
+  );
+>>>>>>> update landing page spacing
 }
