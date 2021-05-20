@@ -18,14 +18,15 @@ const mainContentStyles = {
   display: `flex`,
   flexDirection: `column`,
   fontSize: 4,
-  padding: `70px 0`,
+  padding: `50px 0`,
 }
 
 const mainImageStyles = {
   width: `100%`,
   borderRadius: `1em`,
   padding: `0 30px`,
-  marginTop: "-2em",
+  marginTop: "-3em",
+  marginBottom: "-3em",
 }
 const mainHeadingStyles = {
   fontSize: 5,
@@ -35,7 +36,7 @@ const mainHeadingStyles = {
 
 const mainDescriptionStyles = {
   fontSize: 3,
-  marginBottom: `2rem`,
+  marginBottom: `rem`,
   color: `#000000`,
 }
 

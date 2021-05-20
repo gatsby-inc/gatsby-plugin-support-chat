@@ -37,6 +37,7 @@ export default {
     full: {
       mt: 96,
       background: `#FFB238`,
+      paddingBottom: `3rem`
     },
   },
   lineHeights: {
