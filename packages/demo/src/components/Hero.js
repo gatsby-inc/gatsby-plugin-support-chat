@@ -40,8 +40,9 @@ const Hero = () => (
         Gatsby Support Chat Plugin
       </Heading>
       <Text sx={heroDescriptionStyles}>
-        This could be, or perhaps a platinum is the risk of a database. What we
-        don't know for sure is whether or not few can name a leery voice.
+        A Gatsby plugin to add a chat window to your Gatsby site that integrates
+        with your Slack workspace. Add the plugin to your site and respond to
+        new messages in a thread in a designated channel.
       </Text>
       <Flex sx={{ alignItems: `center` }}>
         <Button sx={{ ...heroButtonStyles, marginRight: 4 }}>
@@ -67,6 +68,6 @@ const Hero = () => (
       />
     </Flex>
   </Box>
-);
+)
 
 export default Hero

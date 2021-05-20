@@ -54,8 +54,8 @@ const Features = () => (
           Drop-in Componenent
         </Heading>
         <Text sx={mainDescriptionStyles}>
-          Fix me please. Fix me please. Fix me please. Fix me please. Fix me
-          please. Fix me please. Fix me please. Fix me please. Fix me please.
+          Import the component from the plugin and add it to your Gatsby site.
+          Configure options to add your own branding and custom messaging.
         </Text>
       </Box>
     </article>
@@ -66,8 +66,9 @@ const Features = () => (
           Easy to use Chatbot
         </Heading>
         <Text sx={mainDescriptionStyles}>
-          Fix me please. Fix me please. Fix me please. Fix me please. Fix me
-          please. Fix me please. Fix me please. Fix me please. Fix me please.
+          A familiar interface for users to communicate with your team. All
+          messages are cached in the browser for the user to easily return to
+          them later.
         </Text>
       </Box>
       <Flex sx={{ margin: `auto` }}>
@@ -92,8 +93,9 @@ const Features = () => (
           Connects to your Slack Workspace
         </Heading>
         <Text sx={mainDescriptionStyles}>
-          Fix me please. Fix me please. Fix me please. Fix me please. Fix me
-          please. Fix me please. Fix me please. Fix me please. Fix me please.
+          Integrates with your existing Slack workspace. Each new visitor's chat
+          becomes a thread and repsonses to that thread are sent back to the
+          user's browser.
         </Text>
       </Box>
     </article>
