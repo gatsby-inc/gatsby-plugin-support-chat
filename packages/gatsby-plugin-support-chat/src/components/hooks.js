@@ -25,7 +25,7 @@ export const useSupportChat = () => {
       .then(res => res.json())
       .then(data => {
         console.log({ data })
-        if (data.text === "") return
+        if (!data.text) return
 
         setMessages([
           ...messages,

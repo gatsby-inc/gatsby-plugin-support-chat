@@ -5,7 +5,7 @@ import colors from "./colors"
 import Form from "./form"
 import { useSupportChat } from "./hooks"
 
-export default function Dialog({ options, closeChat, ...rest }) {
+export default function Dialog({ open, options, closeChat, ...rest }) {
   const conversation = useRef(null)
   const [messages, sendMessage] = useSupportChat()
 
@@ -24,8 +24,19 @@ export default function Dialog({ options, closeChat, ...rest }) {
 
   return (
     <>
-      <div className={styles.overlay} onClick={closeChat} />
-      <div className={["gatsby-plugin-chat-bot", styles.root].join(" ")}>
+      <div
+        style={{
+          display: open ? "block" : "none",
+        }}
+        className={styles.overlay}
+        onClick={closeChat}
+      />
+      <div
+        style={{
+          display: open ? "flex" : "none",
+        }}
+        className={["gatsby-plugin-chat-bot", styles.root].join(" ")}
+      >
         <header
           style={{
             color: "white",
