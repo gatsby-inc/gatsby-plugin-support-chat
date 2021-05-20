@@ -10,6 +10,8 @@ const mainSectionStyles = {
   padding: `40px 48px`,
   gridTemplateColumns: [`1fr`, `5fr 4fr`],
   background: `#3300C4`,
+  maxWidth: `1174px`,
+  mx: `auto`,
 }
 
 const mainContentStyles = {
@@ -37,9 +39,9 @@ const mainDescriptionStyles = {
   color: `#FFFFFF`,
 }
 
-const MainSection = () => (
-  <div>
-    <section sx={mainSectionStyles}>
+const Features = () => (
+  <Box as="section" variant="layout.full">
+    <article sx={mainSectionStyles}>
       <Flex sx={{ margin: `auto` }}>
         <img
           src={CodeSnippet}
@@ -56,9 +58,9 @@ const MainSection = () => (
           please. Fix me please. Fix me please. Fix me please. Fix me please.
         </Text>
       </Box>
-    </section>
+    </article>
 
-    <section sx={mainSectionStyles}>
+    <article sx={mainSectionStyles}>
       <Box sx={mainContentStyles}>
         <Heading as="h1" sx={mainHeadingStyles}>
           Easy to use Chatbot
@@ -75,9 +77,9 @@ const MainSection = () => (
           sx={mainImageStyles}
         />
       </Flex>
-    </section>
+    </article>
 
-    <section sx={mainSectionStyles}>
+    <article sx={mainSectionStyles}>
       <Flex sx={{ margin: `auto` }}>
         <img
           src={SlackView}
@@ -94,8 +96,8 @@ const MainSection = () => (
           please. Fix me please. Fix me please. Fix me please. Fix me please.
         </Text>
       </Box>
-    </section>
-  </div>
+    </article>
+  </Box>
 )
 
-export default MainSection
+export default Features

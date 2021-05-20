@@ -34,7 +34,7 @@ const heroHeadingStyles = { fontSize: 6, marginBottom: `1rem` }
 const heroDescriptionStyles = { fontSize: 3, marginBottom: `2rem` }
 
 const Hero = () => (
-  <section sx={heroSectionStyles}>
+  <Box as="section" variant="layout.contained" sx={heroSectionStyles}>
     <Box sx={heroContentStyles}>
       <Heading as="h1" sx={heroHeadingStyles}>
         Gatsby Support Chat Plugin
@@ -66,7 +66,7 @@ const Hero = () => (
         sx={heroImageStyles}
       />
     </Flex>
-  </section>
-)
+  </Box>
+);
 
 export default Hero
