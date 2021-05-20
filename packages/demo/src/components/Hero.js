@@ -1,6 +1,6 @@
 /* @jsx jsx */
 import * as React from "react"
-import { Heading, Text, Button, jsx, Flex, Box } from "theme-ui"
+import { Heading, Text, Button, jsx, Flex, Box, Link } from "theme-ui"
 import { GoMarkGithub } from "react-icons/go"
 import HeroImage from "../assets/Header-Image.svg"
 
@@ -57,16 +57,21 @@ const Hero = () => (
         >
           Try it out now!
         </Button>
-        <Button
-          variant="secondary"
-          sx={{
-            ...heroButtonStyles,
-            display: `flex`,
-            textDecoration: ["underline", "none"],
-          }}
-        >
-          <GoMarkGithub sx={iconStyles} /> Visit the Repo
-        </Button>
+        {/* 
+          TODO:Update link when we have a public repo 
+        */}
+        <Link href="https://github.com/gatsby-inc/team-express/tree/main/packages/gatsby-plugin-chat-bot">
+          <Button
+            variant="secondary"
+            sx={{
+              ...heroButtonStyles,
+              display: `flex`,
+              textDecoration: ["underline", "none"],
+            }}
+          >
+            <GoMarkGithub sx={iconStyles} /> Visit the Repo
+          </Button>
+        </Link>
       </Flex>
     </Box>
     <Flex sx={{ margin: `auto` }}>
