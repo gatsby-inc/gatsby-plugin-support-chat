@@ -43,7 +43,7 @@ export default async function handler(
             cache.save()
             return res.json(sortedMessage)
         }else{
-            let latestMessages = sortedMessage.filter(key => {
+            let latestMessages: Array<PollMessage> = sortedMessage.filter(key => {
                 return new Date(parseInt(key['timestamp']) * 1000) > new Date(lastDateRetrieved)
             })
             cache.setKey(threadTs, recentDate)
