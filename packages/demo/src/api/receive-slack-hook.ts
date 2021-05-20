@@ -1,55 +1,32 @@
 import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
-import * as flatCache from 'flat-cache'
-import * as path from 'path';
+import { setKey, save } from "../utils/cache.ts"
 
-const cacheName: string = "slackCache"
-const cachePath = path.resolve("./cache")
-
-let cache = flatCache.load(cacheName, cachePath);
-
-async function setKey(key, value, cacheTime){
-  let now = new Date().getTime()
-  let expire = cacheTime === 0 ? false : cacheTime * 1000 * 60
-  cache.setKey(key, {
-    expire: expire === false ? false : now + expire,
-    data: value
-  })
-}
-
-async function getKey (key, value) {
-  var now = new Date().getTime()
-  var value = cache.getKey(key)
-  if (value === undefined || (value.expire !== false && value.expire < now)) {
-    return undefined
-  } else {
-    return value.data
-  }
-}
-
-async function removeKey (key) {
-  cache.removeKey(key)
-}
-
-async function save () {
-  cache.save(true)
-}
-
-async function removeCache () {
-  flatCache.clearCacheById(cacheName, cachePath)
-}
+let channelID: string = process.env.CHANNEL_ID
 
 export default async function handler(
   req: GatsbyFunctionRequest,
   res: GatsbyFunctionResponse
 ) {
-    const threadTs = req.body.message.thread_ts
-    const message = req.body.message.text
-    if(req.body.subtype ==  'message_replied') {
-      await setKey(threadTs, message, 10).then(() => {
-        save()
-      })
+    console.log(req.body)
+    if(req.body.challenge){
+      return res.json({challenge: req.body.challenge})
+    }
+
+    if(req.body.event.text !=  '' &&
+      req.body.event.channel == channelID &&
+      req.body.event.thread_ts
+    ) {
+        const eventTime = req.body.event_time
+        const message = {
+          message: req.body.event.text,
+          thread_ts: req.body.event.thread_ts,
+          timestamp: req.body.event.event_ts
+        }
+        await setKey(eventTime, message).then(() => {
+          save()
+        })
     }else{
-      console.log("Didn't process if block")
+      console.log(req.body)
     }
     return res.status(200).end()
 }

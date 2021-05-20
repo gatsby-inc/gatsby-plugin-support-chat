@@ -1,3 +1,5 @@
 node_modules
 .cache
 public
+packages/demo/.env.development
+packages/demo/cache/

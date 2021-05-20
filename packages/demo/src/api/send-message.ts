@@ -21,14 +21,14 @@ export default async function handler(
         })
     }
     try {
-        let requestData:SlackRequest  = {channel: channelID, text: req.body}
-        const result = await web.chat.postMessage(requestData).
-        then(res => {
-            return res.json()
+        let requestData: SlackRequest  = {channel: channelID, text: req.body}
+        const result = await web.chat.postMessage(requestData)
+        .then(res => {
+            return res
         })
         res.json(result)
     } catch (error){
+        console.log(error)
         res.status(500).send(error)
     }
 }
-
