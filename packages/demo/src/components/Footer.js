@@ -8,6 +8,7 @@ const footerSectionStyles = {
   display: `grid`,
   gap: `3rem`,
   padding: `0 48px`,
+  paddingBottom: 6,
   gridTemplateColumns: [`1fr`, `5fr 4fr`],
 }
 
@@ -15,6 +16,7 @@ const footerContentStyles = {
   display: `flex`,
   flexDirection: `column`,
   fontSize: 4,
+  order: ["1", "0"],
 }
 
 const footerImageStyles = {
@@ -26,7 +28,7 @@ const footerHeadingStyles = { fontSize: 5, marginBottom: `1rem` }
 const footerDescriptionStyles = { fontSize: 3, marginBottom: `2rem` }
 
 const Footer = () => (
-  <section sx={footerSectionStyles}>
+  <Box as="section" variant="layout.contained" sx={footerSectionStyles}>
     <Box sx={footerContentStyles}>
       <Heading as="h1" sx={footerHeadingStyles}>
         Leverage the power of Functions
@@ -57,7 +59,7 @@ const Footer = () => (
         sx={footerImageStyles}
       />
     </Flex>
-  </section>
+  </Box>
 )
 
 export default Footer

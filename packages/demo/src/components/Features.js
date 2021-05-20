@@ -4,42 +4,52 @@ import CodeSnippet from "../assets/Code-Snippet.svg"
 import WidgetView from "../assets/Widget-View.svg"
 import SlackView from "../assets/Slack-View.svg"
 
-const mainSectionStyles = {
+const featuresSectionStyles = {
   display: `grid`,
   gap: `3rem`,
-  padding: `40px 48px`,
+  padding: `64px 0`,
+  background: `#FFB238`,
+}
+const articleStyles = {
+  display: `grid`,
+  gap: [0, `3rem`],
+  padding: `0 40px`,
   gridTemplateColumns: [`1fr`, `5fr 4fr`],
-  background: `#3300C4`,
+  background: `#FFB238`,
+  maxWidth: 0, // references the theme.sizes array
+  mx: `auto`,
 }
 
 const mainContentStyles = {
   display: `flex`,
   flexDirection: `column`,
   fontSize: 4,
-  padding: `70px 0`,
+  padding: [0, `50px 0`],
 }
 
 const mainImageStyles = {
   width: `100%`,
   borderRadius: `1em`,
   padding: `0 30px`,
-  marginTop: "-2em",
+  marginTop: [0, "-3em"],
+  marginBottom: [0, "-3em"],
 }
 const mainHeadingStyles = {
-  fontSize: 4,
+  fontSize: 5,
   marginBottom: `1rem`,
-  color: `#FFD359`,
+  color: `#3300C4`,
+  marginTop: [`1rem`, 0],
 }
 
 const mainDescriptionStyles = {
   fontSize: 3,
-  marginBottom: `2rem`,
-  color: `#FFFFFF`,
+  marginBottom: `rem`,
+  color: `#000000`,
 }
 
-const MainSection = () => (
-  <div>
-    <section sx={mainSectionStyles}>
+const Features = () => (
+  <Box as="section" sx={featuresSectionStyles} variant="layout.full">
+    <Box as="article" sx={articleStyles}>
       <Flex sx={{ margin: `auto` }}>
         <img
           src={CodeSnippet}
@@ -49,23 +59,24 @@ const MainSection = () => (
       </Flex>
       <Box sx={mainContentStyles}>
         <Heading as="h1" sx={mainHeadingStyles}>
-          Drop-in Componenent
+          Drop-in Component
         </Heading>
         <Text sx={mainDescriptionStyles}>
-          Fix me please. Fix me please. Fix me please. Fix me please. Fix me
-          please. Fix me please. Fix me please. Fix me please. Fix me please.
+          Import the component from the plugin and add it to your Gatsby site.
+          Configure options to add your own branding and custom messaging.
         </Text>
       </Box>
-    </section>
+    </Box>
 
-    <section sx={mainSectionStyles}>
-      <Box sx={mainContentStyles}>
+    <Box as="article" sx={articleStyles}>
+      <Box sx={{ ...mainContentStyles, order: ["1", "0"] }}>
         <Heading as="h1" sx={mainHeadingStyles}>
           Easy to use Chatbot
         </Heading>
         <Text sx={mainDescriptionStyles}>
-          Fix me please. Fix me please. Fix me please. Fix me please. Fix me
-          please. Fix me please. Fix me please. Fix me please. Fix me please.
+          A familiar interface for users to communicate with your team. All
+          messages are cached in the browser for the user to easily return to
+          them later.
         </Text>
       </Box>
       <Flex sx={{ margin: `auto` }}>
@@ -75,9 +86,9 @@ const MainSection = () => (
           sx={mainImageStyles}
         />
       </Flex>
-    </section>
+    </Box>
 
-    <section sx={mainSectionStyles}>
+    <Box as="article" sx={articleStyles}>
       <Flex sx={{ margin: `auto` }}>
         <img
           src={SlackView}
@@ -90,12 +101,13 @@ const MainSection = () => (
           Connects to your Slack Workspace
         </Heading>
         <Text sx={mainDescriptionStyles}>
-          Fix me please. Fix me please. Fix me please. Fix me please. Fix me
-          please. Fix me please. Fix me please. Fix me please. Fix me please.
+          Integrates with your existing Slack workspace. Each new visitor's chat
+          becomes a thread and repsonses to that thread are sent back to the
+          user's browser.
         </Text>
       </Box>
-    </section>
-  </div>
+    </Box>
+  </Box>
 )
 
-export default MainSection
+export default Features

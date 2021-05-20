@@ -1,6 +1,6 @@
 /* @jsx jsx */
 import * as React from "react"
-import { Heading, Text, Button, jsx, Flex, Box } from "theme-ui"
+import { Heading, Text, Button, jsx, Flex, Box, Link } from "theme-ui"
 import { GoMarkGithub } from "react-icons/go"
 import HeroImage from "../assets/Header-Image.svg"
 
@@ -33,30 +33,46 @@ const iconStyles = {
 const heroHeadingStyles = { fontSize: 6, marginBottom: `1rem` }
 const heroDescriptionStyles = { fontSize: 3, marginBottom: `2rem` }
 
+const toggleWidget = e => {
+  e.preventDefault()
+  if (window !== undefined) {
+    window.document.querySelector('button[title="Open chat"]')?.click()
+  }
+}
+
 const Hero = () => (
-  <section sx={heroSectionStyles}>
+  <Box as="section" variant="layout.contained" sx={heroSectionStyles}>
     <Box sx={heroContentStyles}>
       <Heading as="h1" sx={heroHeadingStyles}>
         Gatsby Support Chat Plugin
       </Heading>
       <Text sx={heroDescriptionStyles}>
-        This could be, or perhaps a platinum is the risk of a database. What we
-        don't know for sure is whether or not few can name a leery voice.
+        A Gatsby plugin to add a chat window to your Gatsby site that integrates
+        with your Slack workspace. Add the plugin to your site and respond to
+        new messages in a thread in a designated channel.
       </Text>
       <Flex sx={{ alignItems: `center` }}>
-        <Button sx={{ ...heroButtonStyles, marginRight: 4 }}>
+        <Button
+          sx={{ ...heroButtonStyles, marginRight: 4 }}
+          onClick={toggleWidget}
+        >
           Try it out now!
         </Button>
-        <Button
-          variant="secondary"
-          sx={{
-            ...heroButtonStyles,
-            display: `flex`,
-            textDecoration: ["underline", "none"],
-          }}
-        >
-          <GoMarkGithub sx={iconStyles} /> Visit the Repo
-        </Button>
+        {/* 
+          TODO:Update link when we have a public repo 
+        */}
+        <Link href="https://github.com/gatsby-inc/team-express/tree/main/packages/gatsby-plugin-chat-bot">
+          <Button
+            variant="secondary"
+            sx={{
+              ...heroButtonStyles,
+              display: `flex`,
+              textDecoration: ["underline", "none"],
+            }}
+          >
+            <GoMarkGithub sx={iconStyles} /> Visit the Repo
+          </Button>
+        </Link>
       </Flex>
     </Box>
     <Flex sx={{ margin: `auto` }}>
@@ -66,7 +82,7 @@ const Hero = () => (
         sx={heroImageStyles}
       />
     </Flex>
-  </section>
+  </Box>
 )
 
 export default Hero
