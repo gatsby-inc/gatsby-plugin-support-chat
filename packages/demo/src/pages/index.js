@@ -1,9 +1,13 @@
-import * as React from 'react'
+/* @jsx jsx */
+import * as React from "react";
+import { jsx, Box } from "theme-ui";
 
-export default function Home () {
+import Hero from "../components/Hero";
+
+export default function Home() {
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
-  )
+    <Box as="main" variant="layout.main">
+      <Hero />
+    </Box>
+  );
 }
