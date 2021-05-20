@@ -44,7 +44,17 @@ const Hero = () => (
         don't know for sure is whether or not few can name a leery voice.
       </Text>
       <Flex sx={{ alignItems: `center` }}>
-        <Button sx={{ ...heroButtonStyles, marginRight: 4 }}>
+        <Button
+          sx={{ ...heroButtonStyles, marginRight: 4 }}
+          onClick={e => {
+            e.preventDefault()
+            if (window !== undefined) {
+              window.document
+                .querySelector('button[title="Open chat"]')
+                ?.click()
+            }
+          }}
+        >
           Try it out now!
         </Button>
         <Button
@@ -67,6 +77,6 @@ const Hero = () => (
       />
     </Flex>
   </Box>
-);
+)
 
 export default Hero
