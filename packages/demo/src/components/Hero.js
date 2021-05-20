@@ -1,37 +1,37 @@
 /* @jsx jsx */
-import * as React from "react";
-import { Heading, Text, Button, jsx, Flex, Box } from "theme-ui";
-import { GoMarkGithub } from "react-icons/go";
-import HeroImage from "../assets/Header-Image.svg";
+import * as React from "react"
+import { Heading, Text, Button, jsx, Flex, Box } from "theme-ui"
+import { GoMarkGithub } from "react-icons/go"
+import HeroImage from "../assets/Header-Image.svg"
 
 const heroSectionStyles = {
   display: `grid`,
   gap: `3rem`,
   padding: `0 48px`,
   gridTemplateColumns: [`1fr`, `5fr 4fr`],
-};
+}
 
 const heroContentStyles = {
   display: `flex`,
   flexDirection: `column`,
   fontSize: 4,
-};
+}
 
 const heroButtonStyles = {
   fontSize: 3,
   cursor: `pointer`,
   borderRadius: 2,
   p: 3,
-};
-const heroImageStyles = { width: `100%` };
+}
+const heroImageStyles = { width: `100%` }
 const iconStyles = {
   height: `1.25rem`,
   width: `1.25rem`,
   marginRight: `.5rem`,
   display: [`none`, `block`],
-};
-const heroHeadingStyles = { fontSize: 6, marginBottom: `1rem` };
-const heroDescriptionStyles = { fontSize: 3, marginBottom: `2rem` };
+}
+const heroHeadingStyles = { fontSize: 6, marginBottom: `1rem` }
+const heroDescriptionStyles = { fontSize: 3, marginBottom: `2rem` }
 
 const Hero = () => (
   <section sx={heroSectionStyles}>
@@ -67,6 +67,6 @@ const Hero = () => (
       />
     </Flex>
   </section>
-);
+)
 
-export default Hero;
+export default Hero
