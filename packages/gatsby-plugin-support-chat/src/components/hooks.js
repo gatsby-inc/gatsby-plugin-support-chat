@@ -6,10 +6,13 @@ const endpoints = {
 }
 
 const DELAY = 1000
+const STORAGE_KEY = "GATSBY-PLUGIN-SUPPORT-CHAT-ID"
 
 export const useSupportChat = () => {
   const [messages, setMessages] = useState([])
-  const [thread_ts, setThreadID] = useState(null)
+  const [thread_ts, setThreadID] = useState(() =>
+    localStorage.getItem(STORAGE_KEY)
+  )
 
   // polling for messages
   useEffect(() => {
@@ -66,7 +69,10 @@ export const useSupportChat = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        if (!thread_ts) setThreadID(data.thread_ts)
+        if (!thread_ts) {
+          setThreadID(data.thread_ts)
+          localStorage.setItem(STORAGE_ID, data.thread_ts)
+        }
       })
   }
 
