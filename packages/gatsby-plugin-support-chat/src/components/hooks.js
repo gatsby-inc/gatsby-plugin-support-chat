@@ -73,8 +73,8 @@ export const useSupportChat = () => {
       .then(data => {
         console.log(data)
         if (!thread_ts) {
-          setThreadID(data.thread_ts)
-          localStorage.setItem(STORAGE_KEY, data.thread_ts)
+          setThreadID(data.message?.ts)
+          localStorage.setItem(STORAGE_KEY, data.message?.ts)
         }
       })
   }
