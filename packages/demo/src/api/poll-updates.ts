@@ -1,5 +1,11 @@
-import { getAll, cacheLoad, save } from "../utils/cache.ts"
+import { getAll, cacheLoad, setKey, save } from "../utils/cache.ts"
 import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
+import { WebClient } from "@slack/web-api"
+
+let channelID: string = process.env.CHANNEL_ID
+let token: string = process.env.SLACK_TOKEN
+
+const web = new WebClient(token)
 
 interface PollMessage {
   message: string
@@ -26,18 +32,42 @@ export default async function handler(
   })
   let threadTs: string = req.body.thread
 
-  let threadMessages: Array<PollMessage> = Object.values(messages).filter(
-    key => key["thread_ts"] == threadTs
-  )
+  let threadMessages: Array<PollMessage> = Object.values(messages).filter(key => console.log({ key }) || key.thread_ts == threadTs)
 
-  if (threadMessages.length === 0) {
-    return res.json("no message")
+  if (threadMessages.length === 0 && !!threadTs) {
+    console.log('no messages')
+    // Check if Slack has any messages
+    const uncachedMessages = await web.conversations.replies({
+      channel: channelID,
+      ts: threadTs,
+    })
+    if (uncachedMessages.messages.length) {
+      // 1. map and format
+      const formattedMessages = uncachedMessages.messages.map(m => ({
+        message: m.text,
+        thread_ts: m.thread_ts,
+        timestamp: m.ts,
+        user: m.user,
+      }))
+      // 2. put it in cache
+      formattedMessages.forEach(async msg => {
+        await setKey(msg.timestamp, msg).then(() => {
+          save()
+        })
+      })
+      // 3. return it
+      console.log('resetting cache')
+      return res.json(formattedMessages)
+    } else {
+      return res.json([])
+    }
   } else {
+    console.log('got messages', threadMessages.length)
     let sortedMessage: Array<PollMessage> = threadMessages.sort((a, b) =>
       a.timestamp > b.timestamp ? 1 : b.timestamp > a.timestamp ? -1 : 0
     )
 
-    let lastDateRetrieved: string = cache.getKey(threadTs)
+    let lastDateRetrieved : number = parseInt(req.body.last_date_retrieved || 0) * 1000
     let recentDate: Date = await LatestDate(sortedMessage).then(res => {
       return res
     })

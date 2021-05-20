@@ -7,7 +7,10 @@ import { useSupportChat } from "./hooks"
 
 export default function Dialog({ open, options, closeChat, ...rest }) {
   const conversation = useRef(null)
-  const [messages, sendMessage] = useSupportChat()
+  const [messages, sendMessage, userID] = useSupportChat()
+
+  // todo: scroll
+  useEffect(() => {}, [messages.length])
 
   const handleSubmit = text => {
     // placeholder
@@ -61,11 +64,11 @@ export default function Dialog({ open, options, closeChat, ...rest }) {
             borderBottom: `1px solid ${colors.border}`,
           }}
         >
-          {messages.map(message => (
+          {messages.map((message, i) => (
             <li
-              key={message.time}
+              key={i}
               style={
-                message.sender === "user"
+                message.sender === userID || message.sender === "USER"
                   ? {
                       color: "white",
                       backgroundColor: colors.blue,
@@ -76,7 +79,9 @@ export default function Dialog({ open, options, closeChat, ...rest }) {
                     }
               }
               className={
-                message.sender === "user" ? styles.userMessage : styles.message
+                message.sender === userID || message.sender === "USER"
+                  ? styles.userMessage
+                  : styles.message
               }
             >
               {message.text}
