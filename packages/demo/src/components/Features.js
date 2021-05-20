@@ -102,7 +102,7 @@ const Features = () => (
         </Heading>
         <Text sx={mainDescriptionStyles}>
           Integrates with your existing Slack workspace. Each new visitor's chat
-          becomes a thread and repsonses to that thread are sent back to the
+          becomes a thread, and responses to that thread are sent back to the
           user's browser.
         </Text>
       </Box>
