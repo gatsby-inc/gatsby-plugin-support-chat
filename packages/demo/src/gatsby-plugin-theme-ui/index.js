@@ -59,7 +59,7 @@ export default {
       textDecoration: `none`,
       "&:hover": {
         color: `primary`,
-        textDecoration: `underline`,
+        textDecoration: `none`,
       },
     },
     heading: {
@@ -76,15 +76,18 @@ export default {
   buttons: {
     primary: {
       color: "background",
-      bg: "#452475",
+      bg: "#3300C4",
       "&:hover": {
         bg: "dark",
       },
       cursor: "pointer",
     },
     secondary: {
-      color: "text",
-      bg: "background",
+      color: "#000",
+      bg: "#EEE",
+      "&:hover": {
+        bg: "#BBB",
+      },
       cursor: "pointer",
     },
   },

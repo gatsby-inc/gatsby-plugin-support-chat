@@ -61,7 +61,7 @@ const Hero = () => (
         {/* 
           TODO:Update link when we have a public repo 
         */}
-        <Link href="https://github.com/gatsby-inc/team-express/tree/main/packages/gatsby-plugin-chat-bot">
+        <form action="https://github.com/gatsby-inc/team-express/tree/main/packages/gatsby-plugin-chat-bot">
           <Button
             variant="secondary"
             sx={{
@@ -72,7 +72,7 @@ const Hero = () => (
           >
             <GoMarkGithub sx={iconStyles} /> Visit the Repo
           </Button>
-        </Link>
+        </form>
       </Flex>
     </Box>
     <Flex sx={{ margin: `auto` }}>

@@ -39,7 +39,7 @@ const Footer = () => (
         build GraphQL/REST APIs, and more.
       </Text>
       <Flex sx={{ alignItems: `center` }}>
-        <a href="https://www.gatsbyjs.com/docs/how-to/functions/">
+      <form action="https://www.gatsbyjs.com/docs/how-to/functions/">
           <Button
             sx={{
               ...buttonStyles,
@@ -49,7 +49,7 @@ const Footer = () => (
           >
             Learn More
           </Button>
-        </a>
+        </form>
       </Flex>
     </Box>
     <Flex sx={{ margin: `auto` }}>
