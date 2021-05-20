@@ -1,11 +1,10 @@
 /* @jsx jsx */
-import * as React from "react";
-import { jsx, Box } from "theme-ui";
+import * as React from "react"
+import { jsx, Box } from "theme-ui"
 
-import Hero from "../components/Hero";
-import Footer from "../components/Footer";
-import MainSection from "../components/MainSection";
-
+import Hero from "../components/Hero"
+import Footer from "../components/Footer"
+import MainSection from "../components/MainSection"
 
 export default function Home() {
   return (
@@ -20,5 +19,5 @@ export default function Home() {
         <Footer />
       </Box>
     </div>
-  );
+  )
 }

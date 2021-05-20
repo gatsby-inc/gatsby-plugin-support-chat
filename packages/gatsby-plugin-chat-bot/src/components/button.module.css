@@ -1,6 +1,6 @@
 .button {
   --blue: #3300c5;
-  --shadow: rgba(0, 0, 0, .3);
+  --shadow: rgba(0, 0, 0, 0.3);
 
   position: relative;
   border-radius: 100%;
@@ -12,7 +12,7 @@
   color: white;
   box-shadow: 0 5px 15px var(--shadow);
   transform: rotate(0deg);
-  transition: all .6s ease-in-out;
+  transition: all 0.6s ease-in-out;
 }
 
 .open {
@@ -25,13 +25,13 @@
 }
 
 .line {
-   position: absolute;
-   background: white;
-   height: 5px;
-   width: 50%;
-   left: 20px;
-   display: block;
-   transition: all .6s ease-in-out;
+  position: absolute;
+  background: white;
+  height: 5px;
+  width: 50%;
+  left: 20px;
+  display: block;
+  transition: all 0.6s ease-in-out;
 }
 
 .line1 {
@@ -49,9 +49,15 @@
   width: 30%;
 }
 
-.closed .line1 { top: 25px }
-.closed .line2 { top: 30px }
-.closed .line3 { top: 40px }
+.closed .line1 {
+  top: 25px;
+}
+.closed .line2 {
+  top: 30px;
+}
+.closed .line3 {
+  top: 40px;
+}
 
 .open .line {
   position: absolute;
@@ -60,9 +66,15 @@
   left: 25%;
   margin: 0;
 }
-.open .line1 { transform: rotate(45deg); }
-.open .line2 { transform: rotate(135deg); }
-.open .line3 { opacity: 0; }
+.open .line1 {
+  transform: rotate(45deg);
+}
+.open .line2 {
+  transform: rotate(135deg);
+}
+.open .line3 {
+  opacity: 0;
+}
 
 @media screen and (min-width: 32em) {
   .open {

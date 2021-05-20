@@ -5,10 +5,19 @@
     "packages/*"
   ],
   "scripts": {
-    "start": "yarn workspace demo start"
+    "start": "yarn workspace demo start",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@slack/events-api": "^3.0.0",
     "@slack/web-api": "^6.2.3"
+  },
+  "devDependencies": {
+    "husky": ">=6",
+    "lint-staged": ">=10",
+    "prettier": "^2.3.0"
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
