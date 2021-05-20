@@ -27,7 +27,7 @@ export default async function handler(
     .filter(key => key['thread_ts'] == threadTs)
 
     if(threadMessages.length === 0){
-        return res.status(200).end()
+        return res.json("no message")
     }else{
 
         let sortedMessage: Array<PollMessage> = threadMessages
