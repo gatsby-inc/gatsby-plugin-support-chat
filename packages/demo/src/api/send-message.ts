@@ -8,7 +8,8 @@ const web = new WebClient(token);
 
 interface SlackRequest {
     channel: string
-    text: string
+    text: string,
+    thread_ts?: string
 }
 
 export default async function handler(
@@ -20,8 +21,14 @@ export default async function handler(
             message: "Use post method"
         })
     }
+    let requestData: SlackRequest
+
     try {
-        let requestData: SlackRequest  = {channel: channelID, text: req.body}
+        if(req.body.thread_ts != null){
+            requestData  = {channel: channelID, text: req.body.message, thread_ts: req.body.thread_ts}
+        }else{
+            requestData  = {channel: channelID, text: req.body.message}
+        }
         const result = await web.chat.postMessage(requestData)
         .then(res => {
             return res
