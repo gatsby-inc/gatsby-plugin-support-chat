@@ -33,6 +33,13 @@ const iconStyles = {
 const heroHeadingStyles = { fontSize: 6, marginBottom: `1rem` }
 const heroDescriptionStyles = { fontSize: 3, marginBottom: `2rem` }
 
+const toggleWidget = e => {
+  e.preventDefault()
+  if (window !== undefined) {
+    window.document.querySelector('button[title="Open chat"]')?.click()
+  }
+}
+
 const Hero = () => (
   <Box as="section" variant="layout.contained" sx={heroSectionStyles}>
     <Box sx={heroContentStyles}>
@@ -40,20 +47,13 @@ const Hero = () => (
         Gatsby Support Chat Plugin
       </Heading>
       <Text sx={heroDescriptionStyles}>
-      Fix me please. Fix me please. Fix me please. Fix me please. Fix me
-          please. Fix me please. Fix me please. Fix me please. Fix me please.
+        Fix me please. Fix me please. Fix me please. Fix me please. Fix me
+        please. Fix me please. Fix me please. Fix me please. Fix me please.
       </Text>
       <Flex sx={{ alignItems: `center` }}>
         <Button
           sx={{ ...heroButtonStyles, marginRight: 4 }}
-          onClick={e => {
-            e.preventDefault()
-            if (window !== undefined) {
-              window.document
-                .querySelector('button[title="Open chat"]')
-                ?.click()
-            }
-          }}
+          onClick={toggleWidget}
         >
           Try it out now!
         </Button>

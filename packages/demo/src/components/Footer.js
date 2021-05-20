@@ -16,6 +16,7 @@ const footerContentStyles = {
   display: `flex`,
   flexDirection: `column`,
   fontSize: 4,
+  order: ["1", "0"],
 }
 
 const footerImageStyles = {
