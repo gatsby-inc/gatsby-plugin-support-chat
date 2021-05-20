@@ -47,8 +47,9 @@ const Hero = () => (
         Gatsby Support Chat Plugin
       </Heading>
       <Text sx={heroDescriptionStyles}>
-        Fix me please. Fix me please. Fix me please. Fix me please. Fix me
-        please. Fix me please. Fix me please. Fix me please. Fix me please.
+        A Gatsby plugin to add a chat window to your Gatsby site that integrates
+        with your Slack workspace. Add the plugin to your site and respond to
+        new messages in a thread in a designated channel.
       </Text>
       <Flex sx={{ alignItems: `center` }}>
         <Button
