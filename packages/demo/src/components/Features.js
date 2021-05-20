@@ -9,7 +9,7 @@ const mainSectionStyles = {
   gap: `3rem`,
   padding: `40px 48px`,
   gridTemplateColumns: [`1fr`, `5fr 4fr`],
-  background: `#3300C4`,
+  background: `#FFB238;`,
   maxWidth: `1174px`,
   mx: `auto`,
 }
@@ -28,15 +28,15 @@ const mainImageStyles = {
   marginTop: "-2em",
 }
 const mainHeadingStyles = {
-  fontSize: 4,
+  fontSize: 5,
   marginBottom: `1rem`,
-  color: `#FFD359`,
+  color: `#3300C4`,
 }
 
 const mainDescriptionStyles = {
   fontSize: 3,
   marginBottom: `2rem`,
-  color: `#FFFFFF`,
+  color: `#000000`,
 }
 
 const Features = () => (

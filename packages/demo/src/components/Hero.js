@@ -40,8 +40,8 @@ const Hero = () => (
         Gatsby Support Chat Plugin
       </Heading>
       <Text sx={heroDescriptionStyles}>
-        This could be, or perhaps a platinum is the risk of a database. What we
-        don't know for sure is whether or not few can name a leery voice.
+      Fix me please. Fix me please. Fix me please. Fix me please. Fix me
+          please. Fix me please. Fix me please. Fix me please. Fix me please.
       </Text>
       <Flex sx={{ alignItems: `center` }}>
         <Button sx={{ ...heroButtonStyles, marginRight: 4 }}>
