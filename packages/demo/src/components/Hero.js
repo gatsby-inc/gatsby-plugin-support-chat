@@ -2,7 +2,7 @@
 import * as React from "react"
 import { Heading, Text, Button, jsx, Flex, Box, Link } from "theme-ui"
 import { GoMarkGithub } from "react-icons/go"
-import HeroImage from "../assets/Header-Image.svg"
+import HeroImage from "../assets/Header-Image.png"
 
 const heroSectionStyles = {
   display: `grid`,
