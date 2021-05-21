@@ -36,7 +36,6 @@ const mainImageStyles = {
   padding: `0 30px`,
   marginTop: [0, "-3em"],
   marginBottom: [0, "-3em"],
-  maxHeight: `100%`,
 }
 const mainHeadingStyles = {
   fontSize: 5,
