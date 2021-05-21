@@ -1,8 +1,8 @@
 /* @jsx jsx */
 import { Heading, Text, jsx, Flex, Box } from "theme-ui"
-import CodeSnippet from "../assets/Code-Snippet.svg"
-import WidgetView from "../assets/Widget-View.svg"
-import SlackView from "../assets/Slack-View.svg"
+import CodeSnippet from "../assets/Code-Snippet.png"
+import WidgetView from "../assets/Widget-View.png"
+import SlackView from "../assets/Slack-View.png"
 import BoxIcon from "../assets/box.svg"
 import ChatIcon from "../assets/chat.svg"
 import BoltIcon from "../assets/bolt.svg"
@@ -24,19 +24,19 @@ const articleStyles = {
 }
 
 const mainContentStyles = {
-  display: `flex`,
+  display: [`block`, `flex`],
   flexDirection: `column`,
   fontSize: 4,
   padding: [0, `50px 0`],
 }
 
 const mainImageStyles = {
-  width: `100%`,
+  maxWidth: `100%`,
+  height: `auto`,
   borderRadius: `1em`,
   padding: `0 30px`,
   marginTop: [0, "-3em"],
   marginBottom: [0, "-3em"],
-  maxHeight: `100%`,
 }
 const mainHeadingStyles = {
   fontSize: 5,
