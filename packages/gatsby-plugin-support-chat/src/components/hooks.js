@@ -47,7 +47,9 @@ export const useSupportChat = () => {
             setLastTimestamp(last)
 
             const timestampedMessages = messages.filter(m => !!m.time)
-            setMessages([...timestampedMessages, ...newMessages])
+            let spreadMessages = [...timestampedMessages, ...newMessages]
+            console.log({ spreadMessages })
+            setMessages(spreadMessages)
           })
       }, DELAY)
     }

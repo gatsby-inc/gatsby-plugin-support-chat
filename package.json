@@ -1,14 +1,5 @@
 {
-  "private": true,
   "name": "team-express",
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "start": "yarn workspace demo start",
-    "clean": "yarn workspace demo clean",
-    "prepare": "husky install"
-  },
   "dependencies": {
     "@slack/events-api": "^3.0.0",
     "@slack/web-api": "^6.2.3"
@@ -20,5 +11,14 @@
   },
   "lint-staged": {
     "*.{js,css,md}": "prettier --write"
-  }
+  },
+  "private": true,
+  "scripts": {
+    "clean": "yarn workspace demo clean",
+    "prepare": "husky install",
+    "start": "yarn workspace demo start"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
 }
