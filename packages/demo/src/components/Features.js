@@ -31,8 +31,8 @@ const mainContentStyles = {
 }
 
 const mainImageStyles = {
-  width: `100%`,
-  height: `auto`,
+  width: [`auto`, `100%`],
+  height: [`100px`, `auto`],
   borderRadius: `1em`,
   padding: `0 30px`,
   marginTop: [0, "-3em"],
