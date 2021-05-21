@@ -2,7 +2,7 @@ import * as flatCache from "flat-cache"
 import * as path from "path"
 
 export function cacheLoad(cacheName) {
-  const cachePath = path.resolve("./.cache")
+  const cachePath = path.join(__dirname, "./.cache")
   return flatCache.load(cacheName, cachePath)
 }
 
