@@ -29,6 +29,7 @@ const footerImageStyles = {
 }
 const footerHeadingStyles = { fontSize: 5, marginBottom: `1rem` }
 const footerDescriptionStyles = { fontSize: 3, marginBottom: `2rem` }
+const tinyFooterStyles = { gridColumn: `1 / -1`, textAlign: `center` }
 
 const Footer = () => (
   <Box as="section" variant="layout.contained" sx={footerSectionStyles}>
@@ -62,7 +63,7 @@ const Footer = () => (
         sx={footerImageStyles}
       />
     </Flex>
-    <Box>
+    <Box sx={tinyFooterStyles}>
       <Text>
         Made with ⚡️ at <a href="https://gatsbyjs.com">Gatsby</a>.
       </Text>
