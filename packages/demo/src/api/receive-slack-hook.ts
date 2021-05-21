@@ -1,5 +1,5 @@
 import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
-import { setKey, save } from "../utils/cache.ts"
+import { cacheLoad } from "../utils/cache.ts"
 
 let channelID: string = process.env.CHANNEL_ID
 
@@ -7,6 +7,7 @@ export default async function handler(
   req: GatsbyFunctionRequest,
   res: GatsbyFunctionResponse
 ) {
+  const cache = cacheLoad("poll-cache")
   console.log(req.body)
   if (req.body.challenge) {
     return res.json({ challenge: req.body.challenge })
@@ -24,8 +25,8 @@ export default async function handler(
       timestamp: req.body.event.event_ts,
       user: req.body.event.user,
     }
-    setKey(message.timestamp, message)
-    save()
+    cache.setKey(message.timestamp, message)
+    cache.save()
   }
 
   return res.status(200).end()

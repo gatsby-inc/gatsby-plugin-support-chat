@@ -1,4 +1,4 @@
-import { getAll, cacheLoad, setKey, save } from "../utils/cache.ts"
+import { cacheLoad } from "../utils/cache.ts"
 import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
 import { WebClient } from "@slack/web-api"
 
@@ -13,8 +13,6 @@ interface PollMessage {
   timestamp: string
 }
 
-let cache = cacheLoad("poll-cache")
-
 async function LatestDate(messages) {
   return new Date(
     Math.max(
@@ -27,7 +25,8 @@ export default async function handler(
   req: GatsbyFunctionRequest,
   res: GatsbyFunctionResponse
 ) {
-  const messages = getAll()
+  const cache = cacheLoad("poll-cache")
+  const messages = cache.getAll()
   console.log(req.body, messages)
   let threadTs: string = req.body.thread
 
@@ -52,9 +51,9 @@ export default async function handler(
       }))
       // 2. put it in cache
       formattedMessages.forEach(async msg => {
-        setKey(msg.timestamp, msg)
+        cache.setKey(msg.timestamp, msg)
       })
-      save()
+      cache.save()
       // 3. return it
       console.log("resetting cache")
       return res.json(formattedMessages)
