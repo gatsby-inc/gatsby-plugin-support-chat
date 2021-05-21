@@ -27,9 +27,7 @@ export default async function handler(
   req: GatsbyFunctionRequest,
   res: GatsbyFunctionResponse
 ) {
-  const messages = await getAll().then(res => {
-    return res
-  })
+  const messages = getAll()
   let threadTs: string = req.body.thread
 
   let threadMessages: Array<PollMessage> = Object.values(messages).filter(
@@ -52,28 +50,29 @@ export default async function handler(
       }))
       // 2. put it in cache
       formattedMessages.forEach(async msg => {
-        setKey(msg.thread_ts, msg)
-        save()
+        setKey(msg.timestamp, msg)
       })
+      save()
       // 3. return it
+      console.log("resetting cache")
       return res.json(formattedMessages)
     } else {
       return res.json([])
     }
   } else {
+    console.log("got messages", threadMessages.length)
     let sortedMessage: Array<PollMessage> = threadMessages.sort((a, b) =>
       a.timestamp > b.timestamp ? 1 : b.timestamp > a.timestamp ? -1 : 0
     )
 
     let lastDateRetrieved: number =
       parseInt(req.body.last_date_retrieved || 0) * 1000
+    console.log({ lastDateRetrieved })
     let recentDate: Date = await LatestDate(sortedMessage).then(res => {
       return res
     })
 
     if (lastDateRetrieved == undefined) {
-      cache.setKey(threadTs, recentDate)
-      cache.save()
       return res.json(sortedMessage)
     } else {
       let latestMessages: Array<PollMessage> = sortedMessage.filter(key => {

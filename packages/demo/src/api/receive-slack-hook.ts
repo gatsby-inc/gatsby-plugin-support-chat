@@ -24,7 +24,7 @@ export default async function handler(
       timestamp: req.body.event.event_ts,
       user: req.body.event.user,
     }
-    await setKey(eventTime, message)
+    setKey(eventTime, message)
     save()
   }
 
