@@ -62,6 +62,11 @@ const Footer = () => (
         sx={footerImageStyles}
       />
     </Flex>
+    <Box>
+      <Text>
+        Made with ⚡️ at <a href="https://gatsbyjs.com">Gatsby</a>.
+      </Text>
+    </Box>
   </Box>
 )
 
