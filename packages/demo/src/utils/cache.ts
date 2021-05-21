@@ -1,8 +1,9 @@
 import * as flatCache from "flat-cache"
 import * as path from "path"
+import os from "os"
 
 export function cacheLoad(cacheName) {
-  const cachePath = path.join(__dirname, "./.cache")
+  const cachePath = path.join(os.tmpdir(), "./.cache")
   console.log({ cachePath, cacheName })
   return flatCache.load(cacheName, cachePath)
 }
