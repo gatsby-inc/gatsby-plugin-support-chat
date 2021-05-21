@@ -52,6 +52,7 @@ export default {
     default: {
       fontFamily: `body`,
       color: `text`,
+      lineHeight: `body`,
     },
     link: {
       fontFamily: `body`,
@@ -65,6 +66,7 @@ export default {
     heading: {
       fontFamily: `heading`,
       fontWeight: `heading`,
+      lineHeight: `heading`,
     },
 
     capitalized: {
