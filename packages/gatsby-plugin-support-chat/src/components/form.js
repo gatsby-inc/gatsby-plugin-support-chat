@@ -4,7 +4,7 @@ import SendIcon from "./send-icon"
 import * as styles from "./form.module.css"
 import colors from "./colors"
 
-export default function Form({ onSubmit, closeChat, ...props }) {
+export default function Form({ sendMessage, closeChat, ...props }) {
   const [text, setText] = useState("")
   const input = useRef(null)
 
@@ -16,7 +16,7 @@ export default function Form({ onSubmit, closeChat, ...props }) {
   const handleSubmit = e => {
     e.preventDefault()
     if (text === "") return
-    onSubmit(text)
+    sendMessage(text)
     setText("")
     if (input.current) input.current.focus()
   }

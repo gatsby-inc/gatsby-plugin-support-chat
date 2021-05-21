@@ -9,21 +9,13 @@ export default function Dialog({ open, options, closeChat, ...rest }) {
   const conversation = useRef(null)
   const [messages, sendMessage, userID] = useSupportChat()
 
-  // todo: scroll
-  useEffect(() => {}, [messages.length])
-
-  const handleSubmit = text => {
-    // placeholder
-    sendMessage(text)
-
-    // scroll to bottom
+  useEffect(() => {
     if (!conversation.current) return
-    setTimeout(() => {
-      conversation.current.scrollTop = conversation.current.scrollHeight
-    }, 100)
-  }
+    conversation.current.scrollTop = conversation.current.scrollHeight
+  }, [messages.length])
 
   const title = options.title || "👋 Hello! How can we help?"
+  const isUser = id => id === userID || id === "USER"
 
   return (
     <>
@@ -68,7 +60,7 @@ export default function Dialog({ open, options, closeChat, ...rest }) {
             <li
               key={i}
               style={
-                message.sender === userID || message.sender === "USER"
+                isUser(message.sender)
                   ? {
                       color: "white",
                       backgroundColor: colors.blue,
@@ -79,16 +71,14 @@ export default function Dialog({ open, options, closeChat, ...rest }) {
                     }
               }
               className={
-                message.sender === userID || message.sender === "USER"
-                  ? styles.userMessage
-                  : styles.message
+                isUser(message.sender) ? styles.userMessage : styles.message
               }
             >
               {message.text}
             </li>
           ))}
         </ul>
-        <Form onSubmit={handleSubmit} closeChat={closeChat} />
+        <Form sendMessage={sendMessage} closeChat={closeChat} />
       </div>
     </>
   )
