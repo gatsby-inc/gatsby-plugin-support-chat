@@ -3,6 +3,7 @@ import * as path from "path"
 
 export function cacheLoad(cacheName) {
   const cachePath = path.join(__dirname, "./.cache")
+  console.log({ cachePath, cacheName })
   return flatCache.load(cacheName, cachePath)
 }
 
