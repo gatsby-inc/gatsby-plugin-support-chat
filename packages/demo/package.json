@@ -12,11 +12,11 @@
   },
   "dependencies": {
     "flat-cache": "^3.0.4",
-    "gatsby": "^3.5.0",
-    "gatsby-plugin-support-chat": "*",
+    "gatsby": "^3.6.0-next.6",
     "gatsby-plugin-gatsby-cloud": "^2.5.0",
     "gatsby-plugin-image": "^1.5.0",
     "gatsby-plugin-sharp": "^3.5.0",
+    "gatsby-plugin-support-chat": "*",
     "gatsby-plugin-theme-ui": "^0.8.4",
     "gatsby-source-filesystem": "^3.5.0",
     "gatsby-transformer-sharp": "^3.5.0",
