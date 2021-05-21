@@ -35,6 +35,7 @@ export default async function handler(
     key => key.thread_ts == threadTs
   )
 
+  console.log(`threadMessages`, threadMessages)
   if (threadMessages.length === 0 && !!threadTs) {
     // Check if Slack has any messages
     const uncachedMessages = await web.conversations.replies({
