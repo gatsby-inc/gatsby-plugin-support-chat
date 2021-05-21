@@ -60,6 +60,7 @@ const Features = () => (
     <Box as="article" sx={articleStyles}>
       <Flex sx={{ margin: `auto` }}>
         <StaticImage
+          loading="eager"
           src={`../assets/Code-Snippet.png`}
           alt="Gatsby Plugin Support Chat Hero Image"
           placeholder="none"
@@ -69,6 +70,7 @@ const Features = () => (
       <Box sx={mainContentStyles}>
         <Heading as="h1" sx={mainHeadingStyles}>
           <StaticImage
+            loading="eager"
             src={"../assets/box.svg"}
             placeholder="none"
             alt="Box Icon"
@@ -87,6 +89,7 @@ const Features = () => (
       <Box sx={{ ...mainContentStyles, order: ["1", "0"] }}>
         <Heading as="h1" sx={mainHeadingStyles}>
           <StaticImage
+            loading="eager"
             src={"../assets/chat.svg"}
             placeholder="none"
             alt="Chat Icon"

@@ -78,6 +78,7 @@ const Hero = () => (
     <Flex sx={{ margin: `auto` }}>
       <StaticImage
         src={"../assets/Header-Image.png"}
+        loading="eager"
         alt="Gatsby Plugin Support Chat Hero Image"
         placeholder="none"
         sx={heroImageStyles}
