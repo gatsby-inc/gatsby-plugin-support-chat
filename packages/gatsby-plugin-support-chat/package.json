@@ -9,6 +9,7 @@
     "react-dom": "^17.0.2"
   },
   "dependencies": {
-    "@loadable/component": "^5.15.0"
+    "@loadable/component": "^5.15.0",
+    "gatsby": "^3.7.0-next.0"
   }
 }
