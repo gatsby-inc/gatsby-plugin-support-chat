@@ -36,7 +36,6 @@ export const useSupportChat = () => {
         })
           .then(res => res.json())
           .then(data => {
-            console.log(data)
             if (data.length === 0) return
             const newMessages = data.map(d => ({
               text: d.message,
@@ -47,7 +46,8 @@ export const useSupportChat = () => {
             setLastTimestamp(last)
 
             const timestampedMessages = messages.filter(m => !!m.time)
-            setMessages([...timestampedMessages, ...newMessages])
+            let spreadMessages = [...timestampedMessages, ...newMessages]
+            setMessages(spreadMessages)
           })
       }, DELAY)
     }
@@ -79,7 +79,6 @@ export const useSupportChat = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         if (!thread_ts) {
           setThreadID(data.message?.ts)
           localStorage.setItem(STORAGE_KEY, data.message?.ts)

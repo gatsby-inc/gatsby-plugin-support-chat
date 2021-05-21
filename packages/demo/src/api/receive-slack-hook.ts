@@ -24,11 +24,9 @@ export default async function handler(
       timestamp: req.body.event.event_ts,
       user: req.body.event.user,
     }
-    await setKey(eventTime, message).then(() => {
-      save()
-    })
-  } else {
-    console.log(req.body)
+    await setKey(eventTime, message)
+    save()
   }
+
   return res.status(200).end()
 }
