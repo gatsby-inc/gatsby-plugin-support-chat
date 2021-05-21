@@ -3,29 +3,18 @@ import { useState, useEffect, useRef } from "react"
 import * as styles from "./dialog.module.css"
 import colors from "./colors"
 import Form from "./form"
+import { useSupportChat } from "./hooks"
 
-export default function Dialog({ options, closeChat, ...rest }) {
+export default function Dialog({ open, options, closeChat, ...rest }) {
   const conversation = useRef(null)
+  const [messages, sendMessage, userID] = useSupportChat()
 
-  // placeholder
-  const [messages, setMessages] = useState([
-    {
-      user: "bot",
-      text: "Hello! How can we help you?",
-      time: Date.now(),
-    },
-  ])
+  // todo: scroll
+  useEffect(() => {}, [messages.length])
 
   const handleSubmit = text => {
     // placeholder
-    setMessages([
-      ...messages,
-      {
-        time: Date.now(),
-        text,
-        sender: "user",
-      },
-    ])
+    sendMessage(text)
 
     // scroll to bottom
     if (!conversation.current) return
@@ -38,8 +27,19 @@ export default function Dialog({ options, closeChat, ...rest }) {
 
   return (
     <>
-      <div className={styles.overlay} onClick={closeChat} />
-      <div className={["gatsby-plugin-chat-bot", styles.root].join(" ")}>
+      <div
+        style={{
+          display: open ? "block" : "none",
+        }}
+        className={styles.overlay}
+        onClick={closeChat}
+      />
+      <div
+        style={{
+          display: open ? "flex" : "none",
+        }}
+        className={["gatsby-plugin-chat-bot", styles.root].join(" ")}
+      >
         <header
           style={{
             color: "white",
@@ -64,11 +64,11 @@ export default function Dialog({ options, closeChat, ...rest }) {
             borderBottom: `1px solid ${colors.border}`,
           }}
         >
-          {messages.map(message => (
+          {messages.map((message, i) => (
             <li
-              key={message.time}
+              key={i}
               style={
-                message.sender === "user"
+                message.sender === userID || message.sender === "USER"
                   ? {
                       color: "white",
                       backgroundColor: colors.blue,
@@ -79,7 +79,9 @@ export default function Dialog({ options, closeChat, ...rest }) {
                     }
               }
               className={
-                message.sender === "user" ? styles.userMessage : styles.message
+                message.sender === userID || message.sender === "USER"
+                  ? styles.userMessage
+                  : styles.message
               }
             >
               {message.text}

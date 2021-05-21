@@ -13,7 +13,7 @@
   "dependencies": {
     "flat-cache": "^3.0.4",
     "gatsby": "^3.5.0",
-    "gatsby-plugin-chat-bot": "*",
+    "gatsby-plugin-support-chat": "*",
     "gatsby-plugin-gatsby-cloud": "^2.5.0",
     "gatsby-plugin-image": "^1.5.0",
     "gatsby-plugin-sharp": "^3.5.0",

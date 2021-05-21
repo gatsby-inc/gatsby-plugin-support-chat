@@ -20,8 +20,9 @@ export default async function handler(
     const eventTime = req.body.event_time
     const message = {
       message: req.body.event.text,
-      thread_ts: req.body.event.thread_ts,
+      thread_ts: req.body.event.thread_ts || req.body.event.event_ts,
       timestamp: req.body.event.event_ts,
+      user: req.body.event.user,
     }
     await setKey(eventTime, message).then(() => {
       save()

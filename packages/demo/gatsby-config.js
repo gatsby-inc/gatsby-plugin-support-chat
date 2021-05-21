@@ -9,7 +9,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-gatsby-cloud`,
     {
-      resolve: "gatsby-plugin-chat-bot",
+      resolve: "gatsby-plugin-support-chat",
       options: {},
     },
   ],

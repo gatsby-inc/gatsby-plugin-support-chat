@@ -19,7 +19,7 @@ export default function Widget({ options }) {
 
   return (
     <div className={styles.root}>
-      {open && <Dialog closeChat={closeChat} options={options} />}
+      <Dialog open={open} closeChat={closeChat} options={options} />
       <Button open={open} onClick={toggleChat} />
     </div>
   )
