@@ -5,7 +5,7 @@ const endpoints = {
   poll: "/api/poll-updates",
 }
 
-const DELAY = 4000
+const DELAY = 3000
 const STORAGE_KEY = "GATSBY-PLUGIN-SUPPORT-CHAT-ID"
 const USER_ID = "GATSBY-PLUGIN-SUPPORT-CHAT-USER-ID"
 
