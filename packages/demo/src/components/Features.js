@@ -3,6 +3,9 @@ import { Heading, Text, jsx, Flex, Box } from "theme-ui"
 import CodeSnippet from "../assets/Code-Snippet.svg"
 import WidgetView from "../assets/Widget-View.svg"
 import SlackView from "../assets/Slack-View.svg"
+import BoxIcon from "../assets/box.svg"
+import ChatIcon from "../assets/chat.svg"
+import BoltIcon from "../assets/bolt.svg"
 
 const featuresSectionStyles = {
   display: `grid`,
@@ -12,7 +15,7 @@ const featuresSectionStyles = {
 }
 const articleStyles = {
   display: `grid`,
-  gap: [0, `3rem`],
+  gap: [0, `5rem`],
   padding: `0 40px`,
   gridTemplateColumns: [`1fr`, `5fr 4fr`],
   background: `#FFB238`,
@@ -33,12 +36,21 @@ const mainImageStyles = {
   padding: `0 30px`,
   marginTop: [0, "-3em"],
   marginBottom: [0, "-3em"],
+  maxHeight: `100%`,
 }
 const mainHeadingStyles = {
   fontSize: 5,
-  marginBottom: `1rem`,
+  marginBottom: `.5rem`,
   color: `#3300C4`,
   marginTop: [`1rem`, 0],
+  display: `flex`,
+  alignItems: `center`,
+}
+
+const mainHeadingIconStyles = {
+  height: `100%`,
+  width: `auto`,
+  marginRight: 3,
 }
 
 const mainDescriptionStyles = {
@@ -59,6 +71,7 @@ const Features = () => (
       </Flex>
       <Box sx={mainContentStyles}>
         <Heading as="h1" sx={mainHeadingStyles}>
+          <img src={BoxIcon} alt="Box Icon" sx={mainHeadingIconStyles} />
           Drop-in Component
         </Heading>
         <Text sx={mainDescriptionStyles}>
@@ -71,6 +84,7 @@ const Features = () => (
     <Box as="article" sx={articleStyles}>
       <Box sx={{ ...mainContentStyles, order: ["1", "0"] }}>
         <Heading as="h1" sx={mainHeadingStyles}>
+          <img src={ChatIcon} alt="Chat Icon" sx={mainHeadingIconStyles} />
           Easy to use Chatbot
         </Heading>
         <Text sx={mainDescriptionStyles}>
@@ -98,7 +112,8 @@ const Features = () => (
       </Flex>
       <Box sx={mainContentStyles}>
         <Heading as="h1" sx={mainHeadingStyles}>
-          Connects to your Slack Workspace
+          <img src={BoltIcon} alt="Bolt Icon" sx={mainHeadingIconStyles} />
+          Connects to Slack
         </Heading>
         <Text sx={mainDescriptionStyles}>
           Integrates with your existing Slack workspace. Each new visitor's chat
