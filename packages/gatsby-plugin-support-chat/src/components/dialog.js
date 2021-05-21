@@ -15,6 +15,7 @@ export default function Dialog({ open, options, closeChat, ...rest }) {
   }, [messages.length])
 
   const title = options.title || "👋 Hello! How can we help?"
+  const isUser = id => id === userID || id === "USER"
 
   return (
     <>
@@ -59,7 +60,7 @@ export default function Dialog({ open, options, closeChat, ...rest }) {
             <li
               key={i}
               style={
-                message.sender === userID || message.sender === "USER"
+                isUser(message.sender)
                   ? {
                       color: "white",
                       backgroundColor: colors.blue,
@@ -70,9 +71,7 @@ export default function Dialog({ open, options, closeChat, ...rest }) {
                     }
               }
               className={
-                message.sender === userID || message.sender === "USER"
-                  ? styles.userMessage
-                  : styles.message
+                isUser(message.sender) ? styles.userMessage : styles.message
               }
             >
               {message.text}
