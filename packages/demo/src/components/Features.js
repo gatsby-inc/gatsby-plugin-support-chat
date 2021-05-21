@@ -12,7 +12,7 @@ const featuresSectionStyles = {
 }
 const articleStyles = {
   display: `grid`,
-  gap: [0, `3rem`],
+  gap: [0, `5rem`],
   padding: `0 40px`,
   gridTemplateColumns: [`1fr`, `5fr 4fr`],
   background: `#FFB238`,
@@ -33,6 +33,7 @@ const mainImageStyles = {
   padding: `0 30px`,
   marginTop: [0, "-3em"],
   marginBottom: [0, "-3em"],
+  maxHeight: `100%`,
 }
 const mainHeadingStyles = {
   fontSize: 5,
