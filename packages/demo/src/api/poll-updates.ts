@@ -28,6 +28,7 @@ export default async function handler(
   res: GatsbyFunctionResponse
 ) {
   const messages = getAll()
+  console.log(req.body, messages)
   let threadTs: string = req.body.thread
 
   let threadMessages: Array<PollMessage> = Object.values(messages).filter(
