@@ -24,7 +24,7 @@ const articleStyles = {
 }
 
 const mainContentStyles = {
-  display: `flex`,
+  display: [`block`, `flex`],
   flexDirection: `column`,
   fontSize: 4,
   padding: [0, `50px 0`],
