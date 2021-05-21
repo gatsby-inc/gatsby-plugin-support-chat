@@ -26,7 +26,7 @@ export default async function handler(
   res: GatsbyFunctionResponse
 ) {
   const cache = cacheLoad("poll-cache")
-  const messages = cache.getAll()
+  const messages = cache.all()
   console.log(req.body, messages)
   let threadTs: string = req.body.thread
 
@@ -53,7 +53,7 @@ export default async function handler(
       formattedMessages.forEach(async msg => {
         cache.setKey(msg.timestamp, msg)
       })
-      cache.save()
+      cache.save(true)
       // 3. return it
       console.log("resetting cache")
       return res.json(formattedMessages)

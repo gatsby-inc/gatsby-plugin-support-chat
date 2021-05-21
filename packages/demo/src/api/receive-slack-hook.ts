@@ -26,7 +26,7 @@ export default async function handler(
       user: req.body.event.user,
     }
     cache.setKey(message.timestamp, message)
-    cache.save()
+    cache.save(true)
   }
 
   return res.status(200).end()
