@@ -23,6 +23,9 @@ const footerImageStyles = {
   width: `120%`,
   borderRadius: `1em`,
   padding: `10px 48px 10px 10px`,
+  boxShadow: `0px 4px 15px rgba(0,0,0,.2)`,
+  maxWidth: `100%`,
+  padding: 4,
 }
 const footerHeadingStyles = { fontSize: 5, marginBottom: `1rem` }
 const footerDescriptionStyles = { fontSize: 3, marginBottom: `2rem` }
@@ -39,7 +42,7 @@ const Footer = () => (
         build GraphQL/REST APIs, and more.
       </Text>
       <Flex sx={{ alignItems: `center` }}>
-      <form action="https://www.gatsbyjs.com/docs/how-to/functions/">
+        <form action="https://www.gatsbyjs.com/docs/how-to/functions/">
           <Button
             sx={{
               ...buttonStyles,
