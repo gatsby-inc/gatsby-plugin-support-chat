@@ -8,6 +8,7 @@ export default async function handler(
   res: GatsbyFunctionResponse
 ) {
   const cache = cacheLoad("poll-cache")
+  console.log(`all cache`, cache.all())
   console.log(req.body)
   if (req.body.challenge) {
     return res.json({ challenge: req.body.challenge })
