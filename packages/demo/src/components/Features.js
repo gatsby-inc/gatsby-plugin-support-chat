@@ -1,11 +1,7 @@
 /* @jsx jsx */
 import { Heading, Text, jsx, Flex, Box } from "theme-ui"
-import CodeSnippet from "../assets/Code-Snippet.png"
-import WidgetView from "../assets/Widget-View.png"
-import SlackView from "../assets/Slack-View.png"
-import BoxIcon from "../assets/box.svg"
-import ChatIcon from "../assets/chat.svg"
 import BoltIcon from "../assets/bolt.svg"
+import { StaticImage } from "gatsby-plugin-image"
 
 const featuresSectionStyles = {
   display: `grid`,
@@ -63,15 +59,21 @@ const Features = () => (
   <Box as="section" sx={featuresSectionStyles} variant="layout.full">
     <Box as="article" sx={articleStyles}>
       <Flex sx={{ margin: `auto` }}>
-        <img
-          src={CodeSnippet}
+        <StaticImage
+          src={`../assets/Code-Snippet.png`}
           alt="Gatsby Plugin Support Chat Hero Image"
+          placeholder="none"
           sx={mainImageStyles}
         />
       </Flex>
       <Box sx={mainContentStyles}>
         <Heading as="h1" sx={mainHeadingStyles}>
-          <img src={BoxIcon} alt="Box Icon" sx={mainHeadingIconStyles} />
+          <StaticImage
+            src={"../assets/box.svg"}
+            placeholder="none"
+            alt="Box Icon"
+            sx={mainHeadingIconStyles}
+          />
           Drop-in Component
         </Heading>
         <Text sx={mainDescriptionStyles}>
@@ -84,7 +86,12 @@ const Features = () => (
     <Box as="article" sx={articleStyles}>
       <Box sx={{ ...mainContentStyles, order: ["1", "0"] }}>
         <Heading as="h1" sx={mainHeadingStyles}>
-          <img src={ChatIcon} alt="Chat Icon" sx={mainHeadingIconStyles} />
+          <StaticImage
+            src={"../assets/chat.svg"}
+            placeholder="none"
+            alt="Chat Icon"
+            sx={mainHeadingIconStyles}
+          />
           Easy to use Chatbot
         </Heading>
         <Text sx={mainDescriptionStyles}>
@@ -94,9 +101,10 @@ const Features = () => (
         </Text>
       </Box>
       <Flex sx={{ margin: `auto` }}>
-        <img
-          src={WidgetView}
+        <StaticImage
+          src={"../assets/Widget-View.png"}
           alt="Gatsby Plugin Support Chat Hero Image"
+          placeholder="none"
           sx={mainImageStyles}
         />
       </Flex>
@@ -104,9 +112,10 @@ const Features = () => (
 
     <Box as="article" sx={articleStyles}>
       <Flex sx={{ margin: `auto` }}>
-        <img
-          src={SlackView}
+        <StaticImage
+          src={"../assets/Slack-View.png"}
           alt="Gatsby Plugin Support Chat Hero Image"
+          placeholder="none"
           sx={mainImageStyles}
         />
       </Flex>

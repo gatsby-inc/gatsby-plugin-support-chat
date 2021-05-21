@@ -2,7 +2,7 @@
 import * as React from "react"
 import { Heading, Text, Button, jsx, Flex, Box, Link } from "theme-ui"
 import { GoMarkGithub } from "react-icons/go"
-import HeroImage from "../assets/Header-Image.png"
+import { StaticImage } from "gatsby-plugin-image"
 
 const heroSectionStyles = {
   display: `grid`,
@@ -76,9 +76,10 @@ const Hero = () => (
       </Flex>
     </Box>
     <Flex sx={{ margin: `auto` }}>
-      <img
-        src={HeroImage}
+      <StaticImage
+        src={"../assets/Header-Image.png"}
         alt="Gatsby Plugin Support Chat Hero Image"
+        placeholder="none"
         sx={heroImageStyles}
       />
     </Flex>
