@@ -13,30 +13,17 @@ interface PollMessage {
   timestamp: string
 }
 
-async function LatestDate(messages) {
-  return new Date(
-    Math.max(
-      ...messages.map(message => new Date(parseInt(message.timestamp) * 1000))
-    )
-  )
-}
-
 export default async function handler(
   req: GatsbyFunctionRequest,
   res: GatsbyFunctionResponse
 ) {
-  const cache = cacheLoad("poll-cache")
-  const messages = cache.all()
-  console.log(req.body, messages)
   let threadTs: string = req.body.thread
+  const cache = cacheLoad(threadTs)
+  const threadMessages = Object.values(cache.all())
 
-  let threadMessages: Array<PollMessage> = Object.values(messages).filter(
-    key => key.thread_ts == threadTs
-  )
-
-  console.log(`threadMessages`, threadMessages)
   if (threadMessages.length === 0 && !!threadTs) {
-    // Check if Slack has any messages
+    // We can't find any messages in our local cache so check Slack for
+    // messages
     const uncachedMessages = await web.conversations.replies({
       channel: channelID,
       ts: threadTs,
@@ -49,13 +36,12 @@ export default async function handler(
         timestamp: m.ts,
         user: m.user,
       }))
-      // 2. put it in cache
+      // 2. put them in cache
       formattedMessages.forEach(async msg => {
         cache.setKey(msg.timestamp, msg)
       })
       cache.save(true)
-      // 3. return it
-      console.log("resetting cache")
+      // 3. return them
       return res.json(formattedMessages)
     } else {
       return res.json([])
@@ -68,11 +54,9 @@ export default async function handler(
 
     let lastDateRetrieved: number =
       parseInt(req.body.last_date_retrieved || 0) * 1000
-    console.log({ lastDateRetrieved })
-    let recentDate: Date = await LatestDate(sortedMessage).then(res => {
-      return res
-    })
 
+    // Filter out any messages older and including the date of the last message
+    // the client has.
     if (lastDateRetrieved == undefined) {
       return res.json(sortedMessage)
     } else {

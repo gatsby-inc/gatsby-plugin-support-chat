@@ -3,29 +3,6 @@ import * as path from "path"
 import os from "os"
 
 export function cacheLoad(cacheName) {
-  const cachePath = path.join(os.tmpdir(), "./.cache")
-  console.log({ cachePath, cacheName })
+  const cachePath = path.join(os.tmpdir(), "./gatsby-plugin-support-chat/")
   return flatCache.load(cacheName, cachePath)
-}
-
-const cacheName: string = "events-cache"
-
-let cache = cacheLoad(cacheName)
-
-export function setKey(key, value) {
-  cache.setKey(key, value)
-}
-
-export function save() {
-  cache.save(true)
-}
-
-export function getKey(key) {
-  let value = cache.getKey(key)
-  return value
-}
-
-export function getAll() {
-  let value = cache.all()
-  return value
 }
