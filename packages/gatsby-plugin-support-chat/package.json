@@ -1,10 +1,13 @@
 {
   "name": "gatsby-plugin-support-chat",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "index.js",
   "license": "MIT",
   "description": "Gatsby plugin which adds support chat to your site powered by Functions and Slack",
-  "keywords": ["gatsby", "gatsby-plugin"],
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
   "devDependencies": {
     "gatsby": "^3.5.0",
     "react": "^17.0.2",
