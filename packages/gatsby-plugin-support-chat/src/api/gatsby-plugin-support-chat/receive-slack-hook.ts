@@ -1,5 +1,5 @@
 import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
-import { cacheLoad } from "../utils/cache.ts"
+import { cacheLoad } from "../../utils/cache"
 
 let channelID: string = process.env.CHANNEL_ID
 

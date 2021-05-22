@@ -1,4 +1,4 @@
-import { cacheLoad } from "../utils/cache.ts"
+import { cacheLoad } from "../../utils/cache"
 import { GatsbyFunctionRequest, GatsbyFunctionResponse } from "gatsby"
 import { WebClient } from "@slack/web-api"
 

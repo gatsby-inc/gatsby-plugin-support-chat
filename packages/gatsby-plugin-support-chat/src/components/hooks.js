@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react"
 
 const endpoints = {
-  send: "/api/send-message",
-  poll: "/api/poll-updates",
+  send: "/api/gatsby-plugin-support-chat/send-message",
+  poll: "/api/gatsby-plugin-support-chat/poll-updates",
 }
 
 const DELAY = 3000
