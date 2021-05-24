@@ -1,52 +1,6 @@
-# Team Express
+# Monorepo for gatsby-plugin-support-chat
 
-Secret project
+Gatsby plugin which adds support chat to your site powered by Functions and Slack
 
-# gatsby-plugin-support-chat
-
-Adds a simple Slack-based support chat widget to your Gatsby site
-
-## Getting Started
-
-Install the plugin.
-
-```sh
-npm i gatsby-plugin-support-chat
-```
-
-Add it to your `gatsby-config.js` to render on all pages of your site.
-
-```js
-// gatsby-config.js
-module.exports = {
-  plugins: ["gatsby-plugin-support-chat"],
-}
-```
-
-You'll need a Slack API token and a channel ID.
-Add the following tokens to your `.env` file.
-
-```
-SLACK_TOKEN=<YOUR_SLACK_API_TOKEN>
-CHANNEL_ID=<YOUR_CHANNEL_ID>
-```
-
-## Alternative Setups
-
-If you'd like to have more control over the chat widget, you can import the React component or hook to further customize the UI.
-
-```js
-// component
-import { SupportChat } from "gatsby-plugin-support-chat"
-```
-
-```js
-// hook
-import { useSupportChat } from "gatsby-plugin-support-chat"
-
-const MyComponent = props => {
-  const [messages, sendMessage] = useSupportChat()
-
-  /* ... */
-}
-```
+- [Install instructions](./packages/gatsby-plugin-support-chat/)
+- website — [https://supportchat.gatsbyjs.io/](https://supportchat.gatsbyjs.io/)
