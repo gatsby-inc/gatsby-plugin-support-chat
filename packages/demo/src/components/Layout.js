@@ -2,8 +2,7 @@
 import { useStaticQuery, graphql } from "gatsby"
 import { jsx, Box } from "theme-ui"
 import { Helmet } from "react-helmet"
-
-const headerImagePath = "../assets/Header-Image.png"
+import socialImage from "../assets/Header-Image.png"
 
 const Layout = ({ children }) => {
   const {
@@ -30,7 +29,7 @@ const Layout = ({ children }) => {
         meta={[
           {
             name: `image`,
-            content: headerImagePath,
+            content: socialImage,
           },
           {
             property: `og:url`,
@@ -47,7 +46,7 @@ const Layout = ({ children }) => {
           },
           {
             property: `og:image`,
-            content: headerImagePath,
+            content: socialImage,
           },
           /* Twitter Card tags */
           {
