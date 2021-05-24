@@ -1,16 +1,16 @@
 /* @jsx jsx */
-import * as React from "react"
-import { jsx, Box } from "theme-ui"
+import { jsx } from "theme-ui"
 import Hero from "../components/Hero"
 import Features from "../components/Features"
 import Footer from "../components/Footer"
+import Layout from "../components/Layout"
 
 export default function Home() {
   return (
-    <Box as="main">
+    <Layout>
       <Hero />
       <Features />
       <Footer />
-    </Box>
+    </Layout>
   )
 }
