@@ -1,6 +1,5 @@
 /* @jsx jsx */
-import * as React from "react"
-import { Heading, Text, Button, jsx, Flex, Box, Link } from "theme-ui"
+import { Heading, Text, Button, jsx, Flex, Box } from "theme-ui"
 import { GoMarkGithub } from "react-icons/go"
 import { StaticImage } from "gatsby-plugin-image"
 

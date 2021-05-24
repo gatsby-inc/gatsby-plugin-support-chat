@@ -1,5 +1,4 @@
 /* @jsx jsx */
-import * as React from "react"
 import { Heading, Text, Button, jsx, Flex, Box } from "theme-ui"
 import FunctionsSnippet from "../assets/Functions-Snippet.svg"
 import { buttonStyles } from "./shared/index"
