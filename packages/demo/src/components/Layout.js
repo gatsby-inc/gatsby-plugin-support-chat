@@ -22,14 +22,13 @@ const Layout = ({ children }) => {
     `
   )
 
-  console.log(siteMetadata)
   return (
     <Box as="main">
       <Helmet
         meta={[
           {
             name: `image`,
-            content: socialImage,
+            content: `${siteMetadata.siteUrl}${socialImage}`,
           },
           {
             property: `og:url`,
@@ -46,7 +45,7 @@ const Layout = ({ children }) => {
           },
           {
             property: `og:image`,
-            content: socialImage,
+            content: `${siteMetadata.siteUrl}${socialImage}`,
           },
           /* Twitter Card tags */
           {
