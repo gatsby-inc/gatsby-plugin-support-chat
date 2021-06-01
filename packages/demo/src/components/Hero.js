@@ -60,7 +60,7 @@ const Hero = () => (
         {/* 
           TODO:Update link when we have a public repo 
         */}
-        <form action="https://github.com/gatsby-inc/team-express/tree/main/packages/gatsby-plugin-chat-bot">
+        <form action="https://github.com/gatsby-inc/gatsby-plugin-support-chat">
           <Button
             variant="secondary"
             sx={{
